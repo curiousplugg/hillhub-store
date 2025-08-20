@@ -42,7 +42,7 @@ export default function FeaturedProducts() {
               'Function': 'Working compass with magnetic needle',
               'Packaging': 'Premium gift box included'
             },
-            stripePriceId: 'price_1RxfcgBJjaZO6BBgjCSaysiZ'
+            stripePriceId: 'price_1RyIdqBJjaZO6BBgFHzb7Be4'
           };
           setFeaturedProducts([minecraftCompassProduct]);
         }
@@ -70,7 +70,7 @@ export default function FeaturedProducts() {
             'Function': 'Working compass with magnetic needle',
             'Packaging': 'Premium gift box included'
           },
-          stripePriceId: 'price_1RxfcgBJjaZO6BBgjCSaysiZ'
+          stripePriceId: 'price_1RyIdqBJjaZO6BBgFHzb7Be4'
         };
         setFeaturedProducts([minecraftCompassProduct]);
       } finally {

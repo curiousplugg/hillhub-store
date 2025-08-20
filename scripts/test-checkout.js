@@ -13,10 +13,10 @@ async function testCheckout() {
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
       line_items: [
-        {
-          price: 'price_1RxfcgBJjaZO6BBgjCSaysiZ', // Your Minecraft Compass price ID
-          quantity: 1,
-        },
+                            {
+                      price: 'price_1RyIdqBJjaZO6BBgFHzb7Be4', // Your Minecraft Compass price ID
+                      quantity: 1,
+                    },
         // Add shipping
         {
           price_data: {

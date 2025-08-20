@@ -18,12 +18,12 @@ export async function POST(req: NextRequest) {
       line_items: [
         ...items.map((item: { id: string; name: string; description: string; price: number; quantity: number; images?: string[] }) => {
           // Handle Minecraft Compass product specifically - use Stripe price ID for automatic product data
-          if (item.id === 'prod_StSX7agKmGxakP') {
-            return {
-              price: 'price_1RxfcgBJjaZO6BBgjCSaysiZ', // Use Stripe price ID for automatic product data including your uploaded image
-              quantity: item.quantity,
-            };
-          }
+                                if (item.id === 'prod_StSX7agKmGxakP') {
+                        return {
+                          price: 'price_1RyIdqBJjaZO6BBgFHzb7Be4', // Use Stripe price ID for automatic product data including your uploaded image
+                          quantity: item.quantity,
+                        };
+                      }
           
           // For other products, use manual price_data
           return {
