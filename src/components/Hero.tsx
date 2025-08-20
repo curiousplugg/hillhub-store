@@ -36,7 +36,7 @@ export default function Hero() {
                 transition={{ duration: 0.8, delay: 0.4 }}
                 className="text-xl text-gray-600 leading-relaxed"
               >
-                Your one-stop destination for premium dropshipping products. 
+                Your one-stop destination for cool tech products. 
                 Quality, reliability, and exceptional service - all in one place.
               </motion.p>
             </div>

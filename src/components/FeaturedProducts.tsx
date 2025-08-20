@@ -121,7 +121,7 @@ export default function FeaturedProducts() {
             Featured Products
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Discover our handpicked selection of premium products that our customers love
+            Discover our handpicked selection of cool tech products that our customers love
           </p>
         </motion.div>
 

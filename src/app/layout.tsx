@@ -16,20 +16,20 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "HillHub - Premium Dropshipping Store",
-  description: "Your trusted destination for premium dropshipping products. Quality, reliability, and exceptional service - all in one place.",
+  title: "HillHub - Cool Tech Products Store",
+  description: "Your trusted destination for cool tech products. Quality, reliability, and exceptional service - all in one place.",
   metadataBase: new URL('https://hill-hub.com'),
   openGraph: {
-    title: 'HillHub - Premium Dropshipping Store',
-    description: 'Your trusted destination for premium dropshipping products. Quality, reliability, and exceptional service - all in one place.',
+    title: 'HillHub - Cool Tech Products Store',
+    description: 'Your trusted destination for cool tech products. Quality, reliability, and exceptional service - all in one place.',
     url: 'https://hill-hub.com',
     siteName: 'HillHub',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'HillHub - Premium Dropshipping Store',
-    description: 'Your trusted destination for premium dropshipping products.',
+    title: 'HillHub - Cool Tech Products Store',
+    description: 'Your trusted destination for cool tech products.',
   },
   robots: {
     index: true,
