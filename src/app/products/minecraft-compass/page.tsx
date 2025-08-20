@@ -167,7 +167,7 @@ export default function MinecraftCompassPage() {
                   Minecraft Compass
                 </h1>
                 <p className="text-xl text-gray-600 mt-4">
-                  Navigate your world with this authentic Minecraft compass replica
+                  Navigate your world with this authentic Minecraft compass replica. Experience the magic of Minecraft in the real world with this authentic compass replica! Perfect for fans of all ages, this high-quality compass features the iconic red needle that always points to your spawn point. Made with premium materials and attention to detail, it's the perfect gift for any Minecraft enthusiast.
                 </p>
               </div>
 

@@ -19,6 +19,11 @@ export const metadata: Metadata = {
   title: "HillHub - Cool Tech Products Store",
   description: "Your trusted destination for cool tech products. Quality, reliability, and exceptional service - all in one place.",
   metadataBase: new URL('https://hill-hub.com'),
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
   openGraph: {
     title: 'HillHub - Cool Tech Products Store',
     description: 'Your trusted destination for cool tech products. Quality, reliability, and exceptional service - all in one place.',
