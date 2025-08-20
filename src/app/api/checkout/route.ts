@@ -47,7 +47,7 @@ export async function POST(req: NextRequest) {
               name: 'Shipping',
               description: 'Standard shipping (1-3 weeks)',
             },
-            unit_amount: 599, // $5.99 in cents
+                                    unit_amount: 499, // $4.99 in cents
           },
           quantity: 1,
         }

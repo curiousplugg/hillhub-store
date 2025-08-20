@@ -25,7 +25,7 @@ async function testCheckout() {
               name: 'Shipping',
               description: 'Standard shipping (1-3 weeks)',
             },
-            unit_amount: 599, // $5.99 in cents
+                                    unit_amount: 499, // $4.99 in cents
           },
           quantity: 1,
         }
@@ -56,9 +56,9 @@ async function testCheckout() {
     console.log('🎯 This checkout will display:');
     console.log('- Your uploaded Minecraft Compass image');
     console.log('- Product name and description from Stripe');
-    console.log('- Price: $5.99');
-    console.log('- Shipping: $5.99');
-    console.log('- Total: $11.98');
+                    console.log('- Price: $11.99');
+                console.log('- Shipping: $4.99');
+                    console.log('- Total: $16.98');
     console.log('');
     console.log('🔗 Test the checkout by visiting the URL above');
     

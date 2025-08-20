@@ -25,8 +25,8 @@ export default function FeaturedProducts() {
             id: 'prod_StSX7agKmGxakP',
             name: 'Minecraft Compass',
             description: 'Navigate your world with this authentic Minecraft compass replica. Experience the magic of Minecraft in the real world with this authentic compass replica! Perfect for fans of all ages, this high-quality compass features the iconic red needle that always points to your spawn point. Made with premium materials and attention to detail, it\'s the perfect gift for any Minecraft enthusiast.',
-            price: 5.99,
-            originalPrice: 12.99,
+            price: 11.99,
+            originalPrice: 19.99,
             images: ['https://files.stripe.com/links/MDB8YWNjdF8xUnhlS2lCSmphWk82QkJnfGZsX2xpdmVfUUF2RHREZXMwcWpYbFozRjUxT0ZDbkJl00vDrkBY57'], // Use Stripe-hosted image
             category: 'Gaming',
             brand: 'Minecraft Official',
@@ -53,8 +53,8 @@ export default function FeaturedProducts() {
           id: 'prod_StSX7agKmGxakP',
           name: 'Minecraft Compass',
           description: 'Navigate your world with this authentic Minecraft compass replica. Experience the magic of Minecraft in the real world with this authentic compass replica! Perfect for fans of all ages, this high-quality compass features the iconic red needle that always points to your spawn point. Made with premium materials and attention to detail, it\'s the perfect gift for any Minecraft enthusiast.',
-          price: 5.99,
-          originalPrice: 12.99,
+          price: 11.99,
+          originalPrice: 19.99,
           images: ['https://files.stripe.com/links/MDB8YWNjdF8xUnhlS2lCSmphWk82QkJnfGZsX2xpdmVfUUF2RHREZXMwcWpYbFozRjUxT0ZDbkJl00vDrkBY57'], // Use Stripe-hosted image
           category: 'Gaming',
           brand: 'Minecraft Official',

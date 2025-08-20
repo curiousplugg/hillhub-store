@@ -189,11 +189,11 @@ export default function MinecraftCompassPage() {
               {/* Price */}
               <div className="flex items-center space-x-4">
                 <span className="text-4xl font-bold text-gray-900">
-                  $5.99
+                  $11.99
                 </span>
-                <span className="text-xl text-gray-500 line-through">
-                  $12.99
-                </span>
+                                  <span className="text-xl text-gray-500 line-through">
+                    $19.99
+                  </span>
                 <span className="bg-red-500 text-white text-sm px-3 py-1 rounded-full font-medium">
                   54% OFF
                 </span>
@@ -257,7 +257,7 @@ export default function MinecraftCompassPage() {
                     </button>
                   </div>
                   <span className="text-gray-600">
-                    ${(5.99 * quantity).toFixed(2)} total
+                    ${(11.99 * quantity).toFixed(2)} total
                   </span>
                 </div>
               </div>
@@ -266,7 +266,7 @@ export default function MinecraftCompassPage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <button className="flex-1 bg-gray-900 text-white py-4 px-8 rounded-lg font-bold text-lg hover:bg-gray-800 transition-colors flex items-center justify-center group">
                   <ShoppingCart className="h-6 w-6 mr-3 group-hover:scale-110 transition-transform" />
-                  Add to Cart - ${(5.99 * quantity).toFixed(2)}
+                  Add to Cart - ${(11.99 * quantity).toFixed(2)}
                 </button>
 
               </div>
@@ -413,7 +413,7 @@ export default function MinecraftCompassPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-white text-gray-900 py-4 px-8 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors">
-                Buy Now - $5.99
+                Buy Now - $11.99
               </button>
               <button className="border-2 border-white text-white py-4 px-8 rounded-lg font-bold text-lg hover:bg-white hover:text-gray-900 transition-colors">
                 Learn More

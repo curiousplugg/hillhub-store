@@ -24,7 +24,7 @@ async function addMinecraftCompassLive() {
         rating: '4.9',
         reviews: '2847',
         inStock: 'true',
-        originalPrice: '12.99',
+        originalPrice: '19.99',
         features: JSON.stringify(['Authentic Design', 'High-quality Materials', 'Perfect Gift', 'Working Compass', 'Premium Packaging']),
         specifications: JSON.stringify({ 'Material': 'High-quality metal and glass', 'Dimensions': '3.5 x 3.5 x 1.2 inches', 'Weight': '4.2 oz (120g)', 'Color': 'Classic Minecraft brown with red needle', 'Function': 'Working compass with magnetic needle', 'Packaging': 'Premium gift box included' })
       }
@@ -35,7 +35,7 @@ async function addMinecraftCompassLive() {
     // Create the price
     const price = await stripe.prices.create({
       product: product.id,
-      unit_amount: 599, // $5.99 in cents
+              unit_amount: 1199, // $11.99 in cents
       currency: 'usd',
     });
     
@@ -48,7 +48,7 @@ async function addMinecraftCompassLive() {
     console.log('\n🎉 SUCCESS: Minecraft Compass product added to LIVE Stripe account!');
     console.log(`📦 Product ID: ${product.id}`);
     console.log(`💰 Price ID: ${price.id}`);
-    console.log(`💵 Price: $5.99 USD`);
+            console.log(`💵 Price: $11.99 USD`);
     console.log('\n⚠️  IMPORTANT: This is now LIVE - real payments will be processed!');
     console.log('\n📝 Next steps:');
     console.log('1. Set up webhook endpoint in Stripe Dashboard');

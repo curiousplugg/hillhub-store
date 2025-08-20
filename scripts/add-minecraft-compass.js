@@ -18,7 +18,7 @@ async function addMinecraftCompass() {
         rating: '4.9',
         reviews: '2847',
         inStock: 'true',
-        originalPrice: '12.99',
+        originalPrice: '19.99',
         features: JSON.stringify([
           'Authentic Design',
           'High-quality Materials', 
@@ -42,7 +42,7 @@ async function addMinecraftCompass() {
     // Create the price
     const price = await stripe.prices.create({
       product: product.id,
-      unit_amount: 599, // $5.99 in cents
+              unit_amount: 1199, // $11.99 in cents
       currency: 'usd',
     });
 
