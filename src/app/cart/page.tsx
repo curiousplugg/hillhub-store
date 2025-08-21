@@ -13,6 +13,7 @@ export default function CartPage() {
   // Calculate shipping based on products in cart
   const hasCompass = state.items.some(item => item.id === 'prod_StSX7agKmGxakP');
   const hasHologramCube = state.items.some(item => item.id === 'prod_SuAzOcPEF7ZVoV');
+  const hasSmartLedBacklight = state.items.some(item => item.id === 'prod_SmartLedBacklight');
   
   let shippingAmount = 0;
   if (hasCompass && hasHologramCube) {
@@ -22,6 +23,8 @@ export default function CartPage() {
     shippingAmount = 5.99; // $5.99 for compass only
   } else if (hasHologramCube) {
     shippingAmount = 9.99; // $9.99 for hologram cube only
+  } else if (hasSmartLedBacklight) {
+    shippingAmount = 4.99; // $4.99 for Smart LED Backlight
   } else {
     shippingAmount = 9.99; // Default shipping for other products
   }
@@ -96,7 +99,7 @@ export default function CartPage() {
                         <div className="w-24 h-24 bg-gray-100 rounded-xl overflow-hidden shadow-sm">
                           {item.images && item.images.length > 0 ? (
                             <img
-                              src={item.images[0].startsWith('http') ? item.images[0] : `/minecraft_compass/${item.images[0].split('/').pop()}`}
+                              src={item.images[0].startsWith('http') ? item.images[0] : item.images[0]}
                               alt={item.name}
                               className="w-full h-full object-cover"
                             />

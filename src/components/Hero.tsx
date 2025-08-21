@@ -92,7 +92,7 @@ export default function Hero() {
               <div className="grid grid-cols-2 gap-6">
                 {/* Tile 1: Minecraft Compass */}
                 <motion.a
-                  href="/products/MinecraftCompass"
+                  href="/products/minecraft-compass"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5, delay: 1 }}
@@ -121,18 +121,30 @@ export default function Hero() {
                   />
                 </motion.a>
 
-                {/* Tile 3-4: Coming Soon */}
-                {[3, 4].map((item, idx) => (
-                  <motion.div
-                    key={item}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5, delay: 1 + (idx + 2) * 0.1 }}
-                    className="bg-gray-100 rounded-lg p-4 h-40 flex items-center justify-center"
-                  >
-                    <div className="text-gray-400 text-sm">More coming soon</div>
-                  </motion.div>
-                ))}
+                {/* Tile 3: Smart LED Backlight */}
+                <motion.a
+                  href="/products/smart-led-backlight"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: 1.2 }}
+                  className="group bg-gray-100 rounded-lg p-0 h-40 flex items-center justify-center overflow-hidden cursor-pointer"
+                >
+                  <img
+                    src="/monitorSmartLights/main.jpg"
+                    alt="Smart LED Strip Backlight"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                  />
+                </motion.a>
+
+                {/* Tile 4: Coming Soon */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: 1.3 }}
+                  className="bg-gray-100 rounded-lg p-4 h-40 flex items-center justify-center"
+                >
+                  <div className="text-gray-400 text-sm">More coming soon</div>
+                </motion.div>
               </div>
               
               {/* Floating Elements */}
