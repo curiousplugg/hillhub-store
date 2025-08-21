@@ -15,7 +15,6 @@ export default function HologramCubePage() {
   const { addItem } = useCart();
 
   const images = [
-    { src: '/hologramQube/61uz2dP6RdL._SX522_.jpg', label: 'Main Product Shot' },
     { src: '/hologramQube/Hologram_Cube_-_3D_LED_Display_4.webp', label: '3D Display View' },
     { src: '/hologramQube/Hologram-Cube-3D-LED-Display-7.webp', label: 'Holographic View' },
     { src: '/hologramQube/51EkNFd+p9L._AC_SL1001_.jpg', label: 'Package View' },
@@ -275,11 +274,10 @@ export default function HologramCubePage() {
                   className="flex-1 bg-gray-900 text-white py-4 px-8 rounded-lg font-bold text-lg hover:bg-gray-800 transition-colors flex items-center justify-center group"
                 >
                   <ShoppingCart className="h-6 w-6 mr-3 group-hover:scale-110 transition-transform" />
-                  Buy Now - ${(product.price * quantity).toFixed(2)}
+                  Buy Now
                 </button>
 
                 <button className="flex-1 border-2 border-gray-300 text-gray-700 py-4 px-8 rounded-lg font-medium hover:bg-gray-50 transition-colors flex items-center justify-center">
-                  <Heart className="h-6 w-6 mr-3" />
                   Add to Cart - ${(product.price * quantity).toFixed(2)}
                 </button>
               </div>

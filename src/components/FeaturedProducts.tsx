@@ -51,7 +51,7 @@ export default function FeaturedProducts() {
             description: 'Transform your space with this stunning 3D holographic display! The GeekMagic Hologram Cube combines cutting-edge holographic technology with smart functionality. Features a transparent crystal design that showcases your photos, GIFs, and animations in breathtaking 3D. Includes real-time weather updates, digital clock, cryptocurrency tracking, and WiFi connectivity. Perfect as a unique gift or modern desktop decoration.',
             price: 29.99,
             originalPrice: 49.99,
-            images: ['/hologramQube/61uz2dP6RdL._SX522_.jpg'],
+            images: ['/hologramQube/Hologram_Cube_-_3D_LED_Display_4.webp'],
             category: 'Gadgets',
             brand: 'GeekMagic',
             rating: 4.7,
