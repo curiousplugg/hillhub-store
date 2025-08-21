@@ -15,13 +15,14 @@ export default function HologramCubePage() {
   const { addItem } = useCart();
 
   const images = [
+    { src: '/hologramQube/61uz2dP6RdL._SX522_.jpg', label: 'Main Product Shot' },
     { src: '/hologramQube/Hologram_Cube_-_3D_LED_Display_4.webp', label: '3D Display View' },
     { src: '/hologramQube/Hologram-Cube-3D-LED-Display-7.webp', label: 'Holographic View' },
     { src: '/hologramQube/51EkNFd+p9L._AC_SL1001_.jpg', label: 'Package View' },
     { src: '/hologramQube/Screenshot 2025-08-20 at 20.47.19.png', label: 'Product Demo' },
     { src: '/hologramQube/Screenshot 2025-08-20 at 20.47.34.png', label: 'Display Demo' },
     { src: '/hologramQube/Screenshot 2025-08-20 at 20.48.00.png', label: 'Interface Demo' },
-    { src: '/hologramQube/image.png', label: 'Stock Market Display' }
+    { src: '/hologramQube/hologram-cube-stock-market-display.jpg', label: 'Stock Market Display' }
   ];
 
   const videos = [
@@ -79,22 +80,7 @@ export default function HologramCubePage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <div className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="flex items-center space-x-4">
-            <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
-              <Monitor className="h-6 w-6 text-white" />
-            </div>
-            <div>
-              <h1 className="text-4xl font-bold text-gray-900">Hologram Cube</h1>
-              <p className="text-lg text-gray-600 mt-1">
-                3D Smart Weather Station & Digital Clock
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+
 
       {/* Breadcrumb Navigation */}
       <div className="bg-white border-b border-gray-100">
@@ -270,14 +256,21 @@ export default function HologramCubePage() {
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
                 <button 
-                  onClick={handleAddToCart}
+                  onClick={() => {
+                    addItem(product, quantity);
+                    // Redirect to checkout immediately
+                    window.location.href = '/cart';
+                  }}
                   className="flex-1 bg-gray-900 text-white py-4 px-8 rounded-lg font-bold text-lg hover:bg-gray-800 transition-colors flex items-center justify-center group"
                 >
                   <ShoppingCart className="h-6 w-6 mr-3 group-hover:scale-110 transition-transform" />
                   Buy Now
                 </button>
 
-                <button className="flex-1 border-2 border-gray-300 text-gray-700 py-4 px-8 rounded-lg font-medium hover:bg-gray-50 transition-colors flex items-center justify-center">
+                <button 
+                  onClick={handleAddToCart}
+                  className="flex-1 border-2 border-gray-300 text-gray-700 py-4 px-8 rounded-lg font-medium hover:bg-gray-50 transition-colors flex items-center justify-center"
+                >
                   Add to Cart - ${(product.price * quantity).toFixed(2)}
                 </button>
               </div>

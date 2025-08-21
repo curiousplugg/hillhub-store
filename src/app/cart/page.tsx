@@ -9,6 +9,22 @@ import CheckoutButton from '@/components/CheckoutButton';
 
 export default function CartPage() {
   const { state, removeItem, updateQuantity, clearCart } = useCart();
+  
+  // Calculate shipping based on products in cart
+  const hasCompass = state.items.some(item => item.id === 'prod_StSX7agKmGxakP');
+  const hasHologramCube = state.items.some(item => item.id === 'prod_SuAzOcPEF7ZVoV');
+  
+  let shippingAmount = 0;
+  if (hasCompass && hasHologramCube) {
+    // If both products, use the higher shipping rate
+    shippingAmount = 9.99;
+  } else if (hasCompass) {
+    shippingAmount = 5.99; // $5.99 for compass only
+  } else if (hasHologramCube) {
+    shippingAmount = 9.99; // $9.99 for hologram cube only
+  } else {
+    shippingAmount = 9.99; // Default shipping for other products
+  }
 
   if (state.items.length === 0) {
     return (
@@ -153,12 +169,12 @@ export default function CartPage() {
                 </div>
                                         <div className="flex justify-between items-center py-2">
                           <span className="text-gray-600 font-medium">Shipping</span>
-                          <span className="text-gray-900 font-semibold">$9.99</span>
+                          <span className="text-gray-900 font-semibold">${shippingAmount.toFixed(2)}</span>
                         </div>
                 <div className="border-t-2 border-gray-200 pt-4 mt-4">
                   <div className="flex justify-between items-center">
                     <span className="text-lg font-bold text-gray-900">Total</span>
-                                                <span className="text-2xl font-bold text-gray-900">${(state.total + 9.99).toFixed(2)}</span>
+                                                <span className="text-2xl font-bold text-gray-900">${(state.total + shippingAmount).toFixed(2)}</span>
                   </div>
                 </div>
               </div>
@@ -177,7 +193,7 @@ export default function CartPage() {
                   className="w-full bg-gradient-to-r from-gray-900 to-gray-800 text-white py-4 px-6 rounded-xl font-bold text-lg hover:from-gray-800 hover:to-gray-700 transition-all duration-300 transform hover:scale-[1.02] shadow-lg flex items-center justify-center"
                 >
                   <ShoppingCart className="h-5 w-5 mr-2" />
-                                                     Checkout - ${(state.total + 9.99).toFixed(2)}
+                                                     Checkout - ${(state.total + shippingAmount).toFixed(2)}
                 </CheckoutButton>
                 
                 {/* Continue Shopping */}

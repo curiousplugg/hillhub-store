@@ -12,6 +12,23 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    // Calculate shipping based on products in cart
+    let shippingAmount = 0;
+    const hasCompass = items.some((item: any) => item.id === 'prod_StSX7agKmGxakP');
+    const hasHologramCube = items.some((item: any) => item.id === 'prod_SuAzOcPEF7ZVoV');
+    
+    // Set shipping based on products
+    if (hasCompass && hasHologramCube) {
+      // If both products, use the higher shipping rate
+      shippingAmount = 999; // $9.99
+    } else if (hasCompass) {
+      shippingAmount = 599; // $5.99 for compass only
+    } else if (hasHologramCube) {
+      shippingAmount = 999; // $9.99 for hologram cube only
+    } else {
+      shippingAmount = 999; // Default shipping for other products
+    }
+
     // Create Stripe checkout session with custom branding
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
@@ -54,7 +71,7 @@ export async function POST(req: NextRequest) {
               name: 'Shipping',
               description: 'Standard shipping (1-3 weeks)',
             },
-                                    unit_amount: 999, // $9.99 in cents
+            unit_amount: shippingAmount,
           },
           quantity: 1,
         }
