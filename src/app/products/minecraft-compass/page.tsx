@@ -167,7 +167,7 @@ export default function MinecraftCompassPage() {
                   Minecraft Compass
                 </h1>
                 <p className="text-xl text-gray-600 mt-4">
-                  Navigate your world with this authentic Minecraft compass replica. Experience the magic of Minecraft in the real world with this authentic compass replica! Perfect for fans of all ages, this high-quality compass features the iconic red needle that always points to your spawn point. Made with premium materials and attention to detail, it's the perfect gift for any Minecraft enthusiast.
+                  Navigate your world with this authentic Minecraft compass replica! Experience the magic of Minecraft in the real world with this rechargeable electronic compass featuring an oscillating pointer. Perfect for fans of all ages, this high-quality compass points north and makes an ideal backpack charm, desktop decoration, or children&apos;s gift. Battery-powered with USB-C charging for convenience.
                 </p>
               </div>
 
@@ -209,28 +209,32 @@ export default function MinecraftCompassPage() {
               <div className="space-y-4">
                 <h3 className="text-lg font-semibold text-gray-900">Product Description</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Experience the magic of Minecraft in the real world with this authentic compass replica! 
-                  Perfect for fans of all ages, this high-quality compass features the iconic red needle 
-                  that always points to your spawn point. Made with premium materials and attention to detail, 
-                  it&apos;s the perfect gift for any Minecraft enthusiast.
+                  Experience the magic of Minecraft in the real world with this authentic electronic compass replica! 
+                  This rechargeable compass features an oscillating pointer that always points north, just like in the game. 
+                  Perfect for fans of all ages, this battery-powered compass makes an ideal backpack charm, desktop decoration, 
+                  or children&apos;s gift. With USB-C charging and on/off functionality, it&apos;s both practical and collectible.
                 </p>
                 
                 <ul className="space-y-2">
                   <li className="flex items-center text-gray-600">
                     <div className="w-2 h-2 bg-gray-900 rounded-full mr-3" />
-                    Authentic Minecraft design
+                    Rechargeable electronic compass
                   </li>
                   <li className="flex items-center text-gray-600">
                     <div className="w-2 h-2 bg-gray-900 rounded-full mr-3" />
-                    High-quality materials
+                    Oscillating pointer points north
                   </li>
                   <li className="flex items-center text-gray-600">
                     <div className="w-2 h-2 bg-gray-900 rounded-full mr-3" />
-                    Perfect for collectors
+                    USB-C charging with on/off switch
                   </li>
                   <li className="flex items-center text-gray-600">
                     <div className="w-2 h-2 bg-gray-900 rounded-full mr-3" />
-                    Great gift idea
+                    Perfect backpack charm & desktop decor
+                  </li>
+                  <li className="flex items-center text-gray-600">
+                    <div className="w-2 h-2 bg-gray-900 rounded-full mr-3" />
+                    Ideal children&apos;s gift
                   </li>
                 </ul>
               </div>
@@ -314,25 +318,25 @@ export default function MinecraftCompassPage() {
               Why Choose Our Minecraft Compass?
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Authentic design meets quality craftsmanship for the ultimate Minecraft fan experience
+              Electronic compass technology meets authentic Minecraft design for the ultimate fan experience
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                title: "Authentic Design",
-                description: "Faithfully recreated from the original Minecraft game with attention to every detail",
-                icon: "🎯"
+                title: "Electronic Compass",
+                description: "Rechargeable electronic compass with oscillating pointer that points north",
+                icon: "🧭"
               },
               {
-                title: "Premium Quality",
-                description: "Made with high-quality materials that ensure durability and longevity",
-                icon: "⭐"
+                title: "USB-C Charging",
+                description: "Modern USB-C charging with on/off functionality for convenience",
+                icon: "⚡"
               },
               {
-                title: "Perfect Gift",
-                description: "Ideal for Minecraft fans of all ages - from kids to adult collectors",
+                title: "Versatile Use",
+                description: "Perfect as backpack charm, desktop decoration, or children's gift",
                 icon: "🎁"
               }
             ].map((feature, index) => (
@@ -371,12 +375,12 @@ export default function MinecraftCompassPage() {
           <div className="bg-white rounded-2xl shadow-lg p-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {[
-                { label: "Material", value: "High-quality metal and glass" },
-                { label: "Dimensions", value: "3.5 x 3.5 x 1.2 inches" },
-                { label: "Weight", value: "4.2 oz (120g)" },
-                { label: "Color", value: "Classic Minecraft brown with red needle" },
-                { label: "Function", value: "Working compass with magnetic needle" },
-                { label: "Packaging", value: "Premium gift box included" }
+                { label: "Type", value: "Rechargeable Electronic Compass" },
+                { label: "Power Source", value: "Battery-powered with USB-C charging" },
+                { label: "Function", value: "Oscillating pointer points north" },
+                { label: "Controls", value: "On/off switch" },
+                { label: "Use Cases", value: "Backpack charm, desktop decoration, children's gift" },
+                { label: "Design", value: "Authentic Minecraft pixel art style" }
               ].map((spec, index) => (
                 <motion.div
                   key={index}
