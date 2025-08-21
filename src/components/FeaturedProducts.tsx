@@ -44,7 +44,46 @@ export default function FeaturedProducts() {
             },
             stripePriceId: 'price_1RyIdqBJjaZO6BBgFHzb7Be4'
           };
-          setFeaturedProducts([minecraftCompassProduct]);
+
+          const hologramCubeProduct: Product = {
+            id: 'prod_SuAzOcPEF7ZVoV',
+            name: 'GeekMagic Hologram Cube - 3D Smart Weather Station & Digital Clock',
+            description: 'Transform your space with this stunning 3D holographic display! The GeekMagic Hologram Cube combines cutting-edge holographic technology with smart functionality. Features a transparent crystal design that showcases your photos, GIFs, and animations in breathtaking 3D. Includes real-time weather updates, digital clock, cryptocurrency tracking, and WiFi connectivity. Perfect as a unique gift or modern desktop decoration.',
+            price: 49.99,
+            originalPrice: 79.99,
+            images: ['/hologramQube/Hologram_Cube_-_3D_LED_Display_4.webp'],
+            category: 'Electronics',
+            brand: 'GeekMagic',
+            rating: 4.7,
+            reviews: 892,
+            inStock: true,
+            features: [
+              '3D Holographic Display Technology',
+              'Real-time Weather Station',
+              'Digital Clock with Date Display',
+              'Customizable Photo Album',
+              'GIF Animation Support',
+              'WiFi Connectivity',
+              'Cryptocurrency Price Tracking',
+              'Transparent Crystal Design',
+              'Compact & Portable',
+              'USB-C Charging Cable Included'
+            ],
+            specifications: {
+              'Dimensions': '4.33 x 2.76 x 1.97 inches (10 x 6 x 4.5 cm)',
+              'Weight': '3.84 ounces (109g)',
+              'Material': 'High-quality plastic with transparent crystal shell',
+              'Color': 'Black with transparent display',
+              'Connectivity': 'WiFi enabled',
+              'Power': 'USB-C charging cable included',
+              'Display': '3D holographic LED display',
+              'Sensors': 'Three-axis gyroscope sensor',
+              'Compatibility': 'Windows platform support for PC monitoring',
+              'Package Contents': '1x Hologram Cube Display, 1x USB-C Cable, Instructions'
+            },
+            stripePriceId: 'price_1RyMdCBJjaZO6BBgOi7HNQ3y'
+          };
+          setFeaturedProducts([minecraftCompassProduct, hologramCubeProduct]);
         }
       } catch (error) {
         console.error('Error fetching products:', error);
@@ -136,7 +175,11 @@ export default function FeaturedProducts() {
               viewport={{ once: true }}
               className="group bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300"
             >
-                                  <Link href={product.id === 'prod_StSX7agKmGxakP' ? '/products/MinecraftCompass' : `/products/${product.id}`} className="block">
+                                  <Link href={
+                            product.id === 'prod_StSX7agKmGxakP' ? '/products/MinecraftCompass' : 
+                            product.id === 'prod_SuAzOcPEF7ZVoV' ? '/products/hologram-cube' : 
+                            `/products/${product.id}`
+                          } className="block">
                 {/* Product Image */}
                 <div className="relative aspect-square bg-gray-100 overflow-hidden">
                   {product.images && product.images.length > 0 ? (
