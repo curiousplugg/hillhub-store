@@ -12,13 +12,15 @@ async function addHologramCube() {
     const hologramCube = {
       name: 'GeekMagic Hologram Cube - 3D Smart Weather Station & Digital Clock',
       description: 'Transform your space with this stunning 3D holographic display! The GeekMagic Hologram Cube combines cutting-edge holographic technology with smart functionality. Features a transparent crystal design that showcases your photos, GIFs, and animations in breathtaking 3D. Includes real-time weather updates, digital clock, cryptocurrency tracking, and WiFi connectivity. Perfect as a unique gift or modern desktop decoration.',
-      price: 49.99,
-      originalPrice: 79.99,
+      price: 29.99,
+      originalPrice: 49.99,
       images: [
-        'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&h=600&fit=crop',
-        'https://images.unsplash.com/photo-1484704849700-f032a568e944?w=600&h=600&fit=crop'
+        '/hologramQube/61uz2dP6RdL._SX522_.jpg',
+        '/hologramQube/Hologram_Cube_-_3D_LED_Display_4.webp',
+        '/hologramQube/Hologram-Cube-3D-LED-Display-7.webp',
+        '/hologramQube/51EkNFd+p9L._AC_SL1001_.jpg'
       ],
-      category: 'Electronics',
+      category: 'Gadgets',
       brand: 'GeekMagic',
       rating: 4.7,
       reviews: 892,

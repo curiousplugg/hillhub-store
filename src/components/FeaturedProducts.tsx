@@ -49,10 +49,10 @@ export default function FeaturedProducts() {
             id: 'prod_SuAzOcPEF7ZVoV',
             name: 'GeekMagic Hologram Cube - 3D Smart Weather Station & Digital Clock',
             description: 'Transform your space with this stunning 3D holographic display! The GeekMagic Hologram Cube combines cutting-edge holographic technology with smart functionality. Features a transparent crystal design that showcases your photos, GIFs, and animations in breathtaking 3D. Includes real-time weather updates, digital clock, cryptocurrency tracking, and WiFi connectivity. Perfect as a unique gift or modern desktop decoration.',
-            price: 49.99,
-            originalPrice: 79.99,
-            images: ['/hologramQube/Hologram_Cube_-_3D_LED_Display_4.webp'],
-            category: 'Electronics',
+            price: 29.99,
+            originalPrice: 49.99,
+            images: ['/hologramQube/61uz2dP6RdL._SX522_.jpg'],
+            category: 'Gadgets',
             brand: 'GeekMagic',
             rating: 4.7,
             reviews: 892,
@@ -81,7 +81,7 @@ export default function FeaturedProducts() {
               'Compatibility': 'Windows platform support for PC monitoring',
               'Package Contents': '1x Hologram Cube Display, 1x USB-C Cable, Instructions'
             },
-            stripePriceId: 'price_1RyMdCBJjaZO6BBgOi7HNQ3y'
+            stripePriceId: 'price_1RyMhfBJjaZO6BBgQfl1z4HZ'
           };
           setFeaturedProducts([minecraftCompassProduct, hologramCubeProduct]);
         }

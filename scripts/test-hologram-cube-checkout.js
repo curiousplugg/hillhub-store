@@ -13,7 +13,7 @@ async function testHologramCubeCheckout() {
       payment_method_types: ['card'],
       line_items: [
         {
-          price: 'price_1RyMdCBJjaZO6BBgOi7HNQ3y', // Hologram Cube price ID
+          price: 'price_1RyMhfBJjaZO6BBgQfl1z4HZ', // Hologram Cube price ID
           quantity: 1,
         },
         // Add shipping as a separate line item
@@ -24,7 +24,7 @@ async function testHologramCubeCheckout() {
               name: 'Shipping',
               description: 'Standard shipping (1-3 weeks)',
             },
-            unit_amount: 499, // $4.99 in cents
+            unit_amount: 999, // $9.99 in cents
           },
           quantity: 1,
         }
@@ -54,9 +54,9 @@ async function testHologramCubeCheckout() {
     console.log('');
     console.log('🎯 This checkout will display:');
     console.log('- GeekMagic Hologram Cube product');
-    console.log('- Price: $49.99');
-    console.log('- Shipping: $4.99');
-    console.log('- Total: $54.98');
+    console.log('- Price: $29.99');
+    console.log('- Shipping: $9.99');
+    console.log('- Total: $39.98');
     console.log('');
     console.log('🔗 Test the checkout by visiting the URL above');
 

@@ -27,7 +27,7 @@ export async function POST(req: NextRequest) {
                       
                       if (item.id === 'prod_SuAzOcPEF7ZVoV') {
                         return {
-                          price: 'price_1RyMdCBJjaZO6BBgOi7HNQ3y', // Use Stripe price ID for automatic product data
+                          price: 'price_1RyMhfBJjaZO6BBgQfl1z4HZ', // Use Stripe price ID for automatic product data
                           quantity: item.quantity,
                         };
                       }
@@ -54,7 +54,7 @@ export async function POST(req: NextRequest) {
               name: 'Shipping',
               description: 'Standard shipping (1-3 weeks)',
             },
-                                    unit_amount: 499, // $4.99 in cents
+                                    unit_amount: 999, // $9.99 in cents
           },
           quantity: 1,
         }
