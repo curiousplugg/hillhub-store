@@ -3,7 +3,7 @@ import { stripe } from '@/lib/stripe';
 
 export async function POST(req: NextRequest) {
   try {
-    const { productId, quantity = 1, successUrl, cancelUrl } = await req.json();
+    const { productId, quantity = 1, selectedSize, successUrl, cancelUrl } = await req.json();
 
     if (!stripe) {
       return NextResponse.json(
@@ -19,6 +19,8 @@ export async function POST(req: NextRequest) {
       shippingAmount = 599; // $5.99 for compass
     } else if (productId === 'prod_SuAzOcPEF7ZVoV') {
       shippingAmount = 999; // $9.99 for hologram cube
+    } else if (productId === 'prod_SmartLedBacklight') {
+      shippingAmount = 499; // $4.99 for LED backlight
     } else {
       shippingAmount = 999; // Default shipping for other products
     }
@@ -39,6 +41,29 @@ export async function POST(req: NextRequest) {
           if (productId === 'prod_SuAzOcPEF7ZVoV') {
             return {
               price: 'price_1RyMhfBJjaZO6BBgQfl1z4HZ', // Hologram Cube Stripe price ID
+              quantity: quantity,
+            };
+          }
+          
+          if (productId === 'prod_SmartLedBacklight') {
+            // For LED backlight, use manual price data with size information
+            const sizeLabels = {
+              '24inch': '24 Inch',
+              '27inch': '27 Inch', 
+              '32inch': '32 Inch',
+              '34inch': '34 Inch'
+            };
+            
+            return {
+              price_data: {
+                currency: 'usd',
+                product_data: {
+                  name: `Smart LED Strip Backlight - ${sizeLabels[selectedSize as keyof typeof sizeLabels] || '24 Inch'}`,
+                  description: 'Gaming Atmosphere Ambient Light with Music Sync - USB Plug & Play LED Strip',
+                  images: ['https://hill-hub.com/monitorSmartLights/main.jpg'],
+                },
+                unit_amount: 1999, // $19.99
+              },
               quantity: quantity,
             };
           }
@@ -66,6 +91,7 @@ export async function POST(req: NextRequest) {
         order_id: `order_${Date.now()}`,
         product_id: productId,
         quantity: quantity.toString(),
+        selected_size: selectedSize || '',
       },
       shipping_address_collection: {
         allowed_countries: ['US', 'CA', 'GB', 'AU'],

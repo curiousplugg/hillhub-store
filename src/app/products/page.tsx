@@ -85,9 +85,48 @@ export default function ProductsPage() {
       stripePriceId: 'price_1RyMhfBJjaZO6BBgQfl1z4HZ'
     };
 
-    setAllProducts([minecraftCompassProduct, hologramCubeProduct]);
+    const smartLedBacklightProduct: Product = {
+      id: 'prod_SmartLedBacklight',
+      name: 'Smart LED Strip Backlight - Gaming Atmosphere Ambient Light',
+      description: 'Transform your gaming setup with this intelligent LED strip backlight! Simply plug into your computer USB port and watch as it automatically matches your screen colors in real-time. Features multiple modes including screen sync, music rhythm, and custom colors.',
+      price: 19.99,
+      originalPrice: 29.99,
+      images: ['/monitorSmartLights/main.jpg'],
+      category: 'Gaming',
+      brand: 'Skydimo',
+      rating: 4.8,
+      reviews: 1247,
+      inStock: true,
+      features: [
+        'Real-time Screen Color Matching',
+        'USB Plug & Play Installation',
+        'Music Rhythm Sync Mode',
+        'Custom Color Selection',
+        'Adjustable Brightness & Speed',
+        'Multiple Dynamic Effects',
+        '3-Sided LED Strip Design',
+        'Automatic Display Recognition',
+        'Gaming Atmosphere Enhancement',
+        'Easy App Control'
+      ],
+      specifications: {
+        'Type': 'USB LED Light Strip',
+        'Connection': 'USB plug-and-play',
+        'Design': '3-sided LED strip',
+        'Modes': 'Screen sync, Music, Custom, Illusion, Marquee',
+        'Colors': 'Full RGB spectrum',
+        'Control': 'Automatic & manual modes',
+        'Compatibility': 'All computer screens',
+        'Installation': 'No setup required',
+        'Package Contents': '1x LED Strip Set',
+        'Note': 'Color tone may vary slightly from images'
+      },
+      stripePriceId: 'price_smart_led_backlight'
+    };
+
+    setAllProducts([minecraftCompassProduct, hologramCubeProduct, smartLedBacklightProduct]);
     setCategories(['All', 'Gaming', 'Electronics', 'Gadgets']);
-    setBrands(['All', 'Minecraft Official', 'GeekMagic']);
+    setBrands(['All', 'Minecraft Official', 'GeekMagic', 'Skydimo']);
     setLoading(false);
   }, []);
 
@@ -249,8 +288,9 @@ export default function ProductsPage() {
                   }`}
                 >
                                         <a href={
-                    product.id === 'prod_StSX7agKmGxakP' ? '/products/MinecraftCompass' : 
+                    product.id === 'prod_StSX7agKmGxakP' ? '/products/minecraft-compass' : 
                     product.id === 'prod_SuAzOcPEF7ZVoV' ? '/products/hologram-cube' : 
+                    product.id === 'prod_SmartLedBacklight' ? '/products/smart-led-backlight' : 
                     `/products/${product.id}`
                   } className="block w-full">
                     {/* Product Image */}
