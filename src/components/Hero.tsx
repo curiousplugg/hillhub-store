@@ -106,13 +106,28 @@ export default function Hero() {
                   />
                 </motion.a>
 
-                {/* Tile 2-4: Coming Soon */}
-                {[2, 3, 4].map((item, idx) => (
+                {/* Tile 2: Hologram Cube */}
+                <motion.a
+                  href="/products/hologram-cube"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: 1.1 }}
+                  className="group bg-gray-100 rounded-lg p-0 h-40 flex items-center justify-center overflow-hidden cursor-pointer"
+                >
+                  <img
+                    src="/hologramQube/Hologram_Cube_-_3D_LED_Display_4.webp"
+                    alt="Hologram Cube"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                  />
+                </motion.a>
+
+                {/* Tile 3-4: Coming Soon */}
+                {[3, 4].map((item, idx) => (
                   <motion.div
                     key={item}
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5, delay: 1 + (idx + 1) * 0.1 }}
+                    transition={{ duration: 0.5, delay: 1 + (idx + 2) * 0.1 }}
                     className="bg-gray-100 rounded-lg p-4 h-40 flex items-center justify-center"
                   >
                     <div className="text-gray-400 text-sm">More coming soon</div>
