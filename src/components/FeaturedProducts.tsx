@@ -258,10 +258,9 @@ export default function FeaturedProducts() {
                     </span>
                   </div>
                   
-                  {/* Add to Cart Button */}
+                  {/* View Button */}
                   <button className="w-full bg-gray-900 text-white py-2 px-4 rounded-lg font-medium hover:bg-gray-800 transition-colors flex items-center justify-center group/btn">
-                    <ShoppingCart className="h-4 w-4 mr-2 group-hover/btn:scale-110 transition-transform" />
-                    Add to Cart
+                    View
                   </button>
                 </div>
               </Link>

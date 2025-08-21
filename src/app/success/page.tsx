@@ -56,7 +56,7 @@ function SuccessPageContent() {
       </div>
     </div>
   );
-}
+} 
 
 export default function SuccessPage() {
   return (

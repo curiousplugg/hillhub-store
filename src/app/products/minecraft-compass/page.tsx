@@ -191,9 +191,9 @@ export default function MinecraftCompassPage() {
                 <span className="text-4xl font-bold text-gray-900">
                   $11.99
                 </span>
-                                  <span className="text-xl text-gray-500 line-through">
+                <span className="text-xl text-gray-500 line-through">
                     $19.99
-                  </span>
+                </span>
                 <span className="bg-red-500 text-white text-sm px-3 py-1 rounded-full font-medium">
                   54% OFF
                 </span>
