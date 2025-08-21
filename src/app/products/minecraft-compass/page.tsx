@@ -167,7 +167,7 @@ export default function MinecraftCompassPage() {
                   Minecraft Compass
                 </h1>
                 <p className="text-xl text-gray-600 mt-4">
-                  Navigate your world with this authentic Minecraft compass replica! Experience the magic of Minecraft in the real world with this rechargeable electronic compass featuring an oscillating pointer. Perfect for fans of all ages, this high-quality compass points north and makes an ideal backpack charm, desktop decoration, or children&apos;s gift. Battery-powered with USB-C charging for convenience.
+                  Navigate your world with this authentic Minecraft compass replica! Experience the magic of Minecraft in the real world with this rechargeable electronic compass featuring an oscillating pointer. Perfect for fans of all ages, this high-quality compass points north and makes an ideal backpack charm, desktop decoration, or collectible item. Battery-powered with USB-C charging for convenience.
                 </p>
               </div>
 
@@ -212,7 +212,7 @@ export default function MinecraftCompassPage() {
                   Experience the magic of Minecraft in the real world with this authentic electronic compass replica! 
                   This rechargeable compass features an oscillating pointer that always points north, just like in the game. 
                   Perfect for fans of all ages, this battery-powered compass makes an ideal backpack charm, desktop decoration, 
-                  or children&apos;s gift. With USB-C charging and on/off functionality, it&apos;s both practical and collectible.
+                  or collectible item. With USB-C charging and on/off functionality, it&apos;s both practical and collectible.
                 </p>
                 
                 <ul className="space-y-2">
@@ -234,7 +234,7 @@ export default function MinecraftCompassPage() {
                   </li>
                   <li className="flex items-center text-gray-600">
                     <div className="w-2 h-2 bg-gray-900 rounded-full mr-3" />
-                    Ideal children&apos;s gift
+                    Perfect collectible for any age
                   </li>
                 </ul>
               </div>
@@ -336,7 +336,7 @@ export default function MinecraftCompassPage() {
               },
               {
                 title: "Versatile Use",
-                description: "Perfect as backpack charm, desktop decoration, or children's gift",
+                description: "Perfect as backpack charm, desktop decoration, or collectible item",
                 icon: "🎁"
               }
             ].map((feature, index) => (
@@ -379,7 +379,7 @@ export default function MinecraftCompassPage() {
                 { label: "Power Source", value: "Battery-powered with USB-C charging" },
                 { label: "Function", value: "Oscillating pointer points north" },
                 { label: "Controls", value: "On/off switch" },
-                { label: "Use Cases", value: "Backpack charm, desktop decoration, children's gift" },
+                { label: "Use Cases", value: "Backpack charm, desktop decoration, collectible item" },
                 { label: "Design", value: "Authentic Minecraft pixel art style" }
               ].map((spec, index) => (
                 <motion.div
