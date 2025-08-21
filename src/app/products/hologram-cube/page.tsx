@@ -21,7 +21,8 @@ export default function HologramCubePage() {
     { src: '/hologramQube/51EkNFd+p9L._AC_SL1001_.jpg', label: 'Package View' },
     { src: '/hologramQube/Screenshot 2025-08-20 at 20.47.19.png', label: 'Product Demo' },
     { src: '/hologramQube/Screenshot 2025-08-20 at 20.47.34.png', label: 'Display Demo' },
-    { src: '/hologramQube/Screenshot 2025-08-20 at 20.48.00.png', label: 'Interface Demo' }
+    { src: '/hologramQube/Screenshot 2025-08-20 at 20.48.00.png', label: 'Interface Demo' },
+    { src: '/hologramQube/image.png', label: 'Stock Market Display' }
   ];
 
   const videos = [
@@ -93,6 +94,35 @@ export default function HologramCubePage() {
               </p>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Breadcrumb Navigation */}
+      <div className="bg-white border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+          <nav className="flex" aria-label="Breadcrumb">
+            <ol className="flex items-center space-x-2">
+              <li>
+                <a href="/" className="text-gray-500 hover:text-gray-700 transition-colors">
+                  Home
+                </a>
+              </li>
+              <li className="flex items-center">
+                <svg className="h-4 w-4 text-gray-400 mx-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+                </svg>
+                <a href="/products" className="text-gray-500 hover:text-gray-700 transition-colors">
+                  Products
+                </a>
+              </li>
+              <li className="flex items-center">
+                <svg className="h-4 w-4 text-gray-400 mx-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+                </svg>
+                <span className="text-gray-900 font-medium">Hologram Cube</span>
+              </li>
+            </ol>
+          </nav>
         </div>
       </div>
 
@@ -245,12 +275,12 @@ export default function HologramCubePage() {
                   className="flex-1 bg-gray-900 text-white py-4 px-8 rounded-lg font-bold text-lg hover:bg-gray-800 transition-colors flex items-center justify-center group"
                 >
                   <ShoppingCart className="h-6 w-6 mr-3 group-hover:scale-110 transition-transform" />
-                  Add to Cart - ${(product.price * quantity).toFixed(2)}
+                  Buy Now - ${(product.price * quantity).toFixed(2)}
                 </button>
 
                 <button className="flex-1 border-2 border-gray-300 text-gray-700 py-4 px-8 rounded-lg font-medium hover:bg-gray-50 transition-colors flex items-center justify-center">
                   <Heart className="h-6 w-6 mr-3" />
-                  Wishlist
+                  Add to Cart - ${(product.price * quantity).toFixed(2)}
                 </button>
               </div>
 

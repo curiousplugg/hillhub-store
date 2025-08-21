@@ -248,14 +248,22 @@ export default function ProductsPage() {
                     viewMode === 'list' ? 'flex' : ''
                   }`}
                 >
-                                        <a href={product.id === 'prod_StSX7agKmGxakP' ? '/products/MinecraftCompass' : `/products/${product.id}`} className="block w-full">
+                                        <a href={
+                    product.id === 'prod_StSX7agKmGxakP' ? '/products/MinecraftCompass' : 
+                    product.id === 'prod_SuAzOcPEF7ZVoV' ? '/products/hologram-cube' : 
+                    `/products/${product.id}`
+                  } className="block w-full">
                     {/* Product Image */}
                     <div className={`relative bg-gray-100 overflow-hidden ${
                       viewMode === 'list' ? 'w-48 h-48' : 'aspect-square'
                     }`}>
                       {product.images && product.images.length > 0 ? (
                         <img
-                          src={product.id === 'prod_StSX7agKmGxakP' ? '/minecraft_compass/compass_in_hand.jpg' : product.images[0]}
+                          src={
+                            product.id === 'prod_StSX7agKmGxakP' ? '/minecraft_compass/compass_in_hand.jpg' : 
+                            product.id === 'prod_SuAzOcPEF7ZVoV' ? '/hologramQube/61uz2dP6RdL._SX522_.jpg' : 
+                            product.images[0]
+                          }
                           alt={product.name}
                           className="w-full h-full object-cover"
                         />
