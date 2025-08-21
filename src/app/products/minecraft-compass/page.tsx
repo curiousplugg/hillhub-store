@@ -212,7 +212,7 @@ export default function MinecraftCompassPage() {
                   Experience the magic of Minecraft in the real world with this authentic compass replica! 
                   Perfect for fans of all ages, this high-quality compass features the iconic red needle 
                   that always points to your spawn point. Made with premium materials and attention to detail, 
-                  it's the perfect gift for any Minecraft enthusiast.
+                  it&apos;s the perfect gift for any Minecraft enthusiast.
                 </p>
                 
                 <ul className="space-y-2">
