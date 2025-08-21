@@ -18,7 +18,53 @@ export default function FeaturedProducts() {
         const data = await response.json();
         
         if (data.products && data.products.length > 0) {
-          setFeaturedProducts(data.products);
+          // Check if Smart LED Backlight is in the API response
+          const hasSmartLedBacklight = data.products.some((p: any) => p.id === 'prod_SmartLedBacklight');
+          
+          if (!hasSmartLedBacklight) {
+            // Add Smart LED Backlight if it's not in the API response
+            const smartLedBacklightProduct: Product = {
+              id: 'prod_SmartLedBacklight',
+              name: 'Smart LED Strip Backlight - Gaming Atmosphere Ambient Light',
+              description: 'Transform your gaming setup with this intelligent LED strip backlight! Simply plug into your computer USB port and watch as it automatically matches your screen colors in real-time.',
+              price: 19.99,
+              originalPrice: 29.99,
+              images: ['/monitorSmartLights/main.jpg'],
+              category: 'Gaming',
+              brand: 'Skydimo',
+              rating: 4.8,
+              reviews: 1247,
+              inStock: true,
+              features: [
+                'Real-time Screen Color Matching',
+                'USB Plug & Play Installation',
+                'Music Rhythm Sync Mode',
+                'Custom Color Selection',
+                'Adjustable Brightness & Speed',
+                'Multiple Dynamic Effects',
+                '3-Sided LED Strip Design',
+                'Automatic Display Recognition',
+                'Gaming Atmosphere Enhancement',
+                'Easy App Control'
+              ],
+              specifications: {
+                'Type': 'USB LED Light Strip',
+                'Connection': 'USB plug-and-play',
+                'Design': '3-sided LED strip',
+                'Modes': 'Screen sync, Music, Custom, Illusion, Marquee',
+                'Colors': 'Full RGB spectrum',
+                'Control': 'Automatic & manual modes',
+                'Compatibility': 'All computer screens',
+                'Installation': 'No setup required',
+                'Package Contents': '1x LED Strip Set',
+                'Note': 'Color tone may vary slightly from images'
+              },
+              stripePriceId: 'price_smart_led_backlight'
+            };
+            setFeaturedProducts([...data.products, smartLedBacklightProduct]);
+          } else {
+            setFeaturedProducts(data.products);
+          }
         } else {
           // Fallback to hardcoded data if API fails
           const minecraftCompassProduct: Product = {
