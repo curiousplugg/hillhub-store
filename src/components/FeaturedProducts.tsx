@@ -260,7 +260,7 @@ export default function FeaturedProducts() {
               className="group bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300"
             >
                                   <Link href={
-                            product.id === 'prod_StSX7agKmGxakP' ? '/products/minecraft-compass' : 
+                            product.id === 'prod_StSX7agKmGxakP' ? '/products/MinecraftCompass' : 
                             product.id === 'prod_SuAzOcPEF7ZVoV' ? '/products/hologram-cube' : 
                             product.id === 'prod_SmartLedBacklight' ? '/products/smart-led-backlight' : 
                             `/products/${product.id}`

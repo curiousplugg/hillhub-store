@@ -288,7 +288,7 @@ export default function ProductsPage() {
                   }`}
                 >
                                         <a href={
-                    product.id === 'prod_StSX7agKmGxakP' ? '/products/minecraft-compass' : 
+                    product.id === 'prod_StSX7agKmGxakP' ? '/products/MinecraftCompass' : 
                     product.id === 'prod_SuAzOcPEF7ZVoV' ? '/products/hologram-cube' : 
                     product.id === 'prod_SmartLedBacklight' ? '/products/smart-led-backlight' : 
                     `/products/${product.id}`
