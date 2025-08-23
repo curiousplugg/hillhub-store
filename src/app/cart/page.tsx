@@ -63,8 +63,8 @@ export default function CartPage() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-8">
           {/* Cart Items */}
           <div className="lg:col-span-2">
             <div className="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden">
@@ -93,10 +93,10 @@ export default function CartPage() {
                     animate={{ opacity: 1, y: 0 }}
                     className="p-8 hover:bg-gray-50 transition-colors"
                   >
-                    <div className="flex items-center space-x-6">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-6">
                       {/* Product Image */}
                       <div className="flex-shrink-0">
-                        <div className="w-24 h-24 bg-gray-100 rounded-xl overflow-hidden shadow-sm">
+                        <div className="w-20 h-20 sm:w-24 sm:h-24 bg-gray-100 rounded-xl overflow-hidden shadow-sm">
                           {item.images && item.images.length > 0 ? (
                             <img
                               src={item.images[0].startsWith('http') ? item.images[0] : item.images[0]}
@@ -113,14 +113,14 @@ export default function CartPage() {
 
                       {/* Product Info */}
                       <div className="flex-1 min-w-0">
-                        <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                        <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">
                           {item.name}
                         </h3>
-                        <p className="text-lg text-gray-600 font-medium">${item.price}</p>
+                        <p className="text-base sm:text-lg text-gray-600 font-medium">${item.price}</p>
                       </div>
 
                       {/* Quantity Controls */}
-                      <div className="flex items-center space-x-3">
+                      <div className="flex items-center space-x-3 w-full sm:w-auto justify-center sm:justify-start">
                         <button
                           onClick={() => updateQuantity(item.id, item.quantity - 1)}
                           className="w-10 h-10 border-2 border-gray-200 rounded-lg flex items-center justify-center hover:bg-gray-50 hover:border-gray-300 cursor-pointer transition-all duration-200"
@@ -137,8 +137,8 @@ export default function CartPage() {
                       </div>
 
                       {/* Price */}
-                      <div className="text-right">
-                        <p className="text-2xl font-bold text-gray-900">
+                      <div className="text-center sm:text-right">
+                        <p className="text-xl sm:text-2xl font-bold text-gray-900">
                           ${(item.price * item.quantity).toFixed(2)}
                         </p>
                       </div>
@@ -159,7 +159,7 @@ export default function CartPage() {
 
           {/* Order Summary */}
           <div className="lg:col-span-1">
-            <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-8 sticky top-8">
+            <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-4 sm:p-6 lg:p-8 sticky top-8">
               <h2 className="text-xl font-bold text-gray-900 mb-6 flex items-center">
                 <ShoppingCart className="h-5 w-5 mr-2 text-gray-600" />
                 Order Summary

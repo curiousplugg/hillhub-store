@@ -75,7 +75,7 @@ export default function FeaturedProducts() {
             originalPrice: 19.99,
             images: ['https://files.stripe.com/links/MDB8YWNjdF8xUnhlS2lCSmphWk82QkJnfGZsX2xpdmVfUUF2RHREZXMwcWpYbFozRjUxT0ZDbkJl00vDrkBY57'], // Use Stripe-hosted image
             category: 'Gaming',
-            brand: 'Minecraft Official',
+            brand: 'Minecraft',
             rating: 4.9,
             reviews: 2847,
             inStock: true,
@@ -180,7 +180,7 @@ export default function FeaturedProducts() {
           originalPrice: 19.99,
           images: ['https://files.stripe.com/links/MDB8YWNjdF8xUnhlS2lCSmphWk82QkJnfGZsX2xpdmVfUUF2RHREZXMwcWpYbFozRjUxT0ZDbkJl00vDrkBY57'], // Use Stripe-hosted image
           category: 'Gaming',
-          brand: 'Minecraft Official',
+                      brand: 'Minecraft',
           rating: 4.9,
           reviews: 2847,
           inStock: true,
@@ -249,7 +249,7 @@ export default function FeaturedProducts() {
         </motion.div>
 
         {/* Products Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
           {featuredProducts.map((product, index) => (
             <motion.div
               key={product.id}
@@ -292,12 +292,12 @@ export default function FeaturedProducts() {
                 </div>
 
                 {/* Product Info */}
-                <div className="p-4">
+                <div className="p-3 sm:p-4">
                   {/* Brand */}
-                  <p className="text-sm text-gray-500 mb-1">{product.brand}</p>
+                  <p className="text-xs sm:text-sm text-gray-500 mb-1">{product.brand}</p>
                   
                   {/* Product Name */}
-                  <h3 className="font-medium text-gray-900 mb-2 line-clamp-2 group-hover:text-gray-700 transition-colors">
+                  <h3 className="text-sm sm:text-base font-medium text-gray-900 mb-2 line-clamp-2 group-hover:text-gray-700 transition-colors">
                     {product.name}
                   </h3>
                   

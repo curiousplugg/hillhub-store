@@ -47,10 +47,39 @@ export default function MinecraftCompassPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+      {/* Breadcrumb Navigation */}
+      <div className="bg-white border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 sm:py-3">
+          <nav className="flex" aria-label="Breadcrumb">
+            <ol className="flex items-center space-x-1 sm:space-x-2 text-sm sm:text-base">
+              <li>
+                <a href="/" className="text-gray-500 hover:text-gray-700 transition-colors">
+                  Home
+                </a>
+              </li>
+              <li className="flex items-center">
+                <svg className="h-4 w-4 text-gray-400 mx-1 sm:mx-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+                </svg>
+                <a href="/products" className="text-gray-500 hover:text-gray-700 transition-colors">
+                  Products
+                </a>
+              </li>
+              <li className="flex items-center">
+                <svg className="h-4 w-4 text-gray-400 mx-1 sm:mx-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+                </svg>
+                <span className="text-gray-900 font-medium">Minecraft Compass</span>
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+
       {/* Hero Section */}
       <section className="relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
             {/* Product Visuals */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -99,7 +128,7 @@ export default function MinecraftCompassPage() {
               </div>
 
               {/* Thumbnail Navigation */}
-              <div className="grid grid-cols-6 gap-3">
+              <div className="grid grid-cols-4 sm:grid-cols-6 gap-2 sm:gap-3">
                 {/* Image Thumbnails */}
                 {images.map((image, index) => (
                   <button
@@ -161,12 +190,12 @@ export default function MinecraftCompassPage() {
               {/* Brand & Category */}
               <div>
                 <span className="inline-block bg-gray-900 text-white text-xs px-3 py-1 rounded-full font-medium mb-3">
-                  MINECRAFT OFFICIAL
+                  MINECRAFT
                 </span>
-                <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
                   Minecraft Compass
                 </h1>
-                <p className="text-xl text-gray-600 mt-4">
+                <p className="text-base sm:text-lg md:text-xl text-gray-600 mt-2 sm:mt-4">
                   Navigate your world with this authentic Minecraft compass replica! Experience the magic of Minecraft in the real world with this rechargeable electronic compass featuring an oscillating pointer. Perfect for fans of all ages, this high-quality compass points north and makes an ideal backpack charm, desktop decoration, or collectible item. Battery-powered with USB-C charging for convenience.
                 </p>
               </div>
@@ -187,14 +216,14 @@ export default function MinecraftCompassPage() {
               </div>
 
               {/* Price */}
-              <div className="flex items-center space-x-4">
-                <span className="text-4xl font-bold text-gray-900">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-4">
+                <span className="text-3xl sm:text-4xl font-bold text-gray-900">
                   $11.99
                 </span>
-                <span className="text-xl text-gray-500 line-through">
+                <span className="text-lg sm:text-xl text-gray-500 line-through">
                     $19.99
                 </span>
-                <span className="bg-red-500 text-white text-sm px-3 py-1 rounded-full font-medium">
+                <span className="bg-red-500 text-white text-xs sm:text-sm px-2 sm:px-3 py-1 rounded-full font-medium">
                   54% OFF
                 </span>
               </div>
@@ -244,7 +273,7 @@ export default function MinecraftCompassPage() {
                 <label className="block text-sm font-medium text-gray-900 mb-3">
                   Quantity
                 </label>
-                <div className="flex items-center space-x-4">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-3 sm:space-y-0 sm:space-x-4">
                   <div className="flex items-center space-x-3">
                     <button
                       onClick={() => setQuantity(Math.max(1, quantity - 1))}
@@ -252,7 +281,7 @@ export default function MinecraftCompassPage() {
                     >
                       <ArrowLeft className="h-5 w-5" />
                     </button>
-                    <span className="w-16 text-center text-xl font-bold">{quantity}</span>
+                    <span className="w-16 text-center text-xl font-bold text-black">{quantity}</span>
                     <button
                       onClick={() => setQuantity(quantity + 1)}
                       className="w-12 h-12 border border-gray-300 rounded-lg flex items-center justify-center hover:bg-gray-50 transition-colors"
@@ -260,7 +289,7 @@ export default function MinecraftCompassPage() {
                       <ArrowRight className="h-5 w-5" />
                     </button>
                   </div>
-                  <span className="text-gray-600">
+                  <span className="text-gray-600 text-sm sm:text-base">
                     ${(11.99 * quantity).toFixed(2)} total
                   </span>
                 </div>
@@ -276,7 +305,7 @@ export default function MinecraftCompassPage() {
               </div>
 
               {/* Trust Badges */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-gray-200">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 pt-6 border-t border-gray-200">
                 <div className="flex items-center space-x-3">
                   <Truck className="h-8 w-8 text-gray-600" />
                   <div>

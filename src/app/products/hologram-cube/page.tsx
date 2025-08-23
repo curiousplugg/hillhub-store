@@ -84,9 +84,9 @@ export default function HologramCubePage() {
 
       {/* Breadcrumb Navigation */}
       <div className="bg-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 sm:py-3">
           <nav className="flex" aria-label="Breadcrumb">
-            <ol className="flex items-center space-x-2">
+            <ol className="flex items-center space-x-1 sm:space-x-2 text-sm sm:text-base">
               <li>
                 <Link href="/" className="text-gray-500 hover:text-gray-700 transition-colors">
                   Home
@@ -111,8 +111,8 @@ export default function HologramCubePage() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
           {/* Product Media */}
           <div className="space-y-6">
             {/* Main Media Display */}
@@ -132,7 +132,7 @@ export default function HologramCubePage() {
             </div>
 
             {/* Media Thumbnails */}
-            <div className="grid grid-cols-4 gap-4">
+            <div className="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-4 gap-2 sm:gap-4">
               {allMedia.map((media, index) => (
                 <button
                   key={index}
@@ -170,10 +170,10 @@ export default function HologramCubePage() {
           <div className="space-y-8">
             {/* Title and Rating */}
             <div>
-              <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
                 GeekMagic Hologram Cube
               </h1>
-              <p className="text-xl text-gray-600 mt-4">
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 mt-2 sm:mt-4">
                 3D Smart Weather Station & Digital Clock with WiFi Connectivity
               </p>
               
@@ -196,20 +196,20 @@ export default function HologramCubePage() {
             </div>
 
             {/* Price */}
-            <div className="flex items-center space-x-4">
-              <span className="text-4xl font-bold text-gray-900">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-4">
+              <span className="text-3xl sm:text-4xl font-bold text-gray-900">
                 ${product.price}
               </span>
-              <span className="text-xl text-gray-500 line-through">
+              <span className="text-lg sm:text-xl text-gray-500 line-through">
                 ${product.originalPrice}
               </span>
-              <span className="bg-red-500 text-white text-sm px-3 py-1 rounded-full font-medium">
+              <span className="bg-red-500 text-white text-xs sm:text-sm px-2 sm:px-3 py-1 rounded-full font-medium">
                 {Math.round(((product.originalPrice! - product.price) / product.originalPrice!) * 100)}% OFF
               </span>
             </div>
 
             {/* Key Features */}
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
               <div className="flex items-center space-x-3 p-4 bg-blue-50 rounded-lg">
                 <Wifi className="h-5 w-5 text-blue-600" />
                 <span className="text-sm font-medium text-gray-900">WiFi Connected</span>
@@ -230,7 +230,7 @@ export default function HologramCubePage() {
 
             {/* Quantity and Add to Cart */}
             <div className="space-y-6">
-              <div className="flex items-center space-x-4">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-3 sm:space-y-0 sm:space-x-4">
                 <div className="flex items-center space-x-3">
                   <button
                     onClick={() => setQuantity(Math.max(1, quantity - 1))}
@@ -248,7 +248,7 @@ export default function HologramCubePage() {
                     </svg>
                   </button>
                 </div>
-                <span className="text-gray-600">
+                <span className="text-gray-600 text-sm sm:text-base">
                   ${(product.price * quantity).toFixed(2)} total
                 </span>
               </div>
@@ -256,10 +256,29 @@ export default function HologramCubePage() {
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
                 <button 
-                  onClick={() => {
-                    addItem(product, quantity);
-                    // Redirect to checkout immediately
-                    window.location.href = '/cart';
+                  onClick={async () => {
+                    try {
+                      const response = await fetch('/api/checkout/buy-now', {
+                        method: 'POST',
+                        headers: {
+                          'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                          productId: product.id,
+                          quantity: quantity,
+                          successUrl: `${window.location.origin}/success?session_id={CHECKOUT_SESSION_ID}`,
+                          cancelUrl: `${window.location.origin}/products/hologram-cube`,
+                        }),
+                      });
+
+                      const { url } = await response.json();
+                      if (url) {
+                        window.location.href = url;
+                      }
+                    } catch (error) {
+                      console.error('Checkout error:', error);
+                      alert('Failed to create checkout session. Please try again.');
+                    }
                   }}
                   className="flex-1 bg-gray-900 text-white py-4 px-8 rounded-lg font-bold text-lg hover:bg-gray-800 transition-colors flex items-center justify-center group"
                 >
@@ -276,7 +295,7 @@ export default function HologramCubePage() {
               </div>
 
               {/* Trust Badges */}
-              <div className="flex items-center justify-center space-x-8 pt-6 border-t border-gray-200">
+              <div className="flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-8 pt-6 border-t border-gray-200">
                 <div className="flex items-center space-x-2 text-sm text-gray-600">
                   <Truck className="h-4 w-4" />
                   <span>Free Shipping</span>

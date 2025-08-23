@@ -5,8 +5,8 @@ import Link from 'next/link';
 
 export default function CancelPage() {
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-      <div className="max-w-md w-full bg-white rounded-lg shadow-lg p-8 text-center">
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+      <div className="max-w-md w-full bg-white rounded-lg shadow-lg p-6 sm:p-8 text-center">
         <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-6" />
         
         <h1 className="text-2xl font-bold text-gray-900 mb-4">

@@ -20,7 +20,7 @@ async function addMinecraftCompassLive() {
       ],
       metadata: {
         category: 'Gaming',
-        brand: 'Minecraft Official',
+        brand: 'Minecraft',
         rating: '4.9',
         reviews: '2847',
         inStock: 'true',

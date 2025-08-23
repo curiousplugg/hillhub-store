@@ -30,7 +30,7 @@ export default function ProductsPage() {
       originalPrice: 19.99,
       images: ['/minecraft_compass/compass_in_hand.jpg'],
       category: 'Gaming',
-      brand: 'Minecraft Official',
+      brand: 'Minecraft',
       rating: 4.9,
       reviews: 2847,
       inStock: true,
@@ -126,7 +126,7 @@ export default function ProductsPage() {
 
     setAllProducts([minecraftCompassProduct, hologramCubeProduct, smartLedBacklightProduct]);
     setCategories(['All', 'Gaming', 'Electronics', 'Gadgets']);
-    setBrands(['All', 'Minecraft Official', 'GeekMagic', 'Skydimo']);
+          setBrands(['All', 'Minecraft', 'GeekMagic', 'Skydimo']);
     setLoading(false);
   }, []);
 
@@ -272,7 +272,7 @@ export default function ProductsPage() {
             </div>
 
             {/* Products Grid */}
-            <div className={`grid gap-6 ${
+            <div className={`grid gap-4 sm:gap-6 ${
               viewMode === 'grid' 
                 ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3' 
                 : 'grid-cols-1'

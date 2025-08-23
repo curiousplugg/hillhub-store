@@ -14,7 +14,7 @@ async function addMinecraftCompass() {
       images: ['https://your-domain.com/minecraft_compass/compass_in_hand.jpg'],
       metadata: {
         category: 'Gaming',
-        brand: 'Minecraft Official',
+        brand: 'Minecraft',
         rating: '4.9',
         reviews: '2847',
         inStock: 'true',

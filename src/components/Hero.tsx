@@ -17,24 +17,24 @@ export default function Hero() {
             className="space-y-8"
           >
             <div className="space-y-4">
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight"
-              >
-                Discover Amazing
-                <span className="block text-gray-600">Products at</span>
-                <span className="block bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
-                  HillHub
-                </span>
-              </motion.h1>
+                          <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight"
+            >
+              Discover Amazing
+              <span className="block text-gray-600">Products at</span>
+              <span className="block bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
+                HillHub
+              </span>
+            </motion.h1>
               
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="text-xl text-gray-600 leading-relaxed"
+                className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed"
               >
                 Your one-stop destination for cool tech products. 
                 Quality, reliability, and exceptional service - all in one place.
@@ -46,17 +46,17 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="flex items-center space-x-8"
+              className="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-8"
             >
               <div className="flex items-center space-x-2">
                 <Star className="h-5 w-5 text-yellow-400 fill-current" />
-                <span className="text-gray-700 font-medium">Handpicked Products</span>
+                <span className="text-gray-700 font-medium text-sm sm:text-base">Handpicked Products</span>
               </div>
               <div className="text-gray-700 font-medium">
-                <span className="text-2xl font-bold text-gray-900">Best</span> Sellers
+                <span className="text-xl sm:text-2xl font-bold text-gray-900">Best</span> Sellers
               </div>
               <div className="text-gray-700 font-medium">
-                <span className="text-2xl font-bold text-gray-900">Trending</span> Items
+                <span className="text-xl sm:text-2xl font-bold text-gray-900">Trending</span> Items
               </div>
             </motion.div>
 
@@ -87,16 +87,16 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="relative"
           >
-            <div className="relative bg-white rounded-2xl shadow-2xl p-10">
+            <div className="relative bg-white rounded-2xl shadow-2xl p-4 sm:p-6 md:p-8 lg:p-10">
               {/* Product Grid Mockup */}
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-6">
                 {/* Tile 1: Minecraft Compass */}
                 <motion.a
                   href="/products/MinecraftCompass"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5, delay: 1 }}
-                  className="group bg-gray-100 rounded-lg p-0 h-40 flex items-center justify-center overflow-hidden cursor-pointer"
+                  className="group bg-gray-100 rounded-lg p-0 h-24 sm:h-32 md:h-40 flex items-center justify-center overflow-hidden cursor-pointer"
                 >
                   <img
                     src="/minecraft_compass/compass_in_hand.jpg"
@@ -112,7 +112,7 @@ export default function Hero() {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5, delay: 1.1 }}
-                  className="group bg-gray-100 rounded-lg p-0 h-40 flex items-center justify-center overflow-hidden cursor-pointer"
+                  className="group bg-gray-100 rounded-lg p-0 h-24 sm:h-32 md:h-40 flex items-center justify-center overflow-hidden cursor-pointer"
                 >
                   <img
                     src="/hologramQube/Hologram_Cube_-_3D_LED_Display_4.webp"
@@ -127,7 +127,7 @@ export default function Hero() {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5, delay: 1.2 }}
-                  className="group bg-gray-100 rounded-lg p-0 h-40 flex items-center justify-center overflow-hidden cursor-pointer"
+                  className="group bg-gray-100 rounded-lg p-0 h-24 sm:h-32 md:h-40 flex items-center justify-center overflow-hidden cursor-pointer"
                 >
                   <img
                     src="/monitorSmartLights/main.jpg"
@@ -141,7 +141,7 @@ export default function Hero() {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5, delay: 1.3 }}
-                  className="bg-gray-100 rounded-lg p-4 h-40 flex items-center justify-center"
+                  className="bg-gray-100 rounded-lg p-4 h-24 sm:h-32 md:h-40 flex items-center justify-center"
                 >
                   <div className="text-gray-400 text-sm">More coming soon</div>
                 </motion.div>
