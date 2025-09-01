@@ -27,17 +27,17 @@ async function updateMinecraftCompassPrice() {
     const currentPrice = prices.data[0];
     console.log('💰 Current price:', `$${(currentPrice.unit_amount / 100).toFixed(2)}`);
     
-    // Create new price with $11.99 first
-    console.log('🔄 Creating new price: $11.99...');
+    // Create new price with $5.99
+    console.log('🔄 Creating new price: $5.99...');
     const newPrice = await stripe.prices.create({
       product: product.id,
-      unit_amount: 1199, // $11.99 in cents
+      unit_amount: 599, // $5.99 in cents
       currency: 'usd',
     });
     
     console.log('✅ New price created successfully!');
     console.log('💰 New Price ID:', newPrice.id);
-    console.log('💵 New Price: $11.99 USD');
+    console.log('💵 New Price: $5.99 USD');
     
     // Update the product to use the new price as default
     console.log('🔄 Updating product default price...');
@@ -45,8 +45,8 @@ async function updateMinecraftCompassPrice() {
       default_price: newPrice.id,
       metadata: {
         originalPrice: '19.99',
-        salePrice: '11.99',
-        discount: '40%',
+        salePrice: '5.99',
+        discount: '70%',
       },
     });
     
@@ -61,10 +61,10 @@ async function updateMinecraftCompassPrice() {
     
     console.log('\n🎯 Price update completed successfully!');
     console.log('\n📝 Summary:');
-    console.log('- Old Price: $5.99');
-    console.log('- New Price: $11.99');
+    console.log('- Old Price: $11.99');
+    console.log('- New Price: $5.99');
     console.log('- Original Price: $19.99');
-    console.log('- Discount: 40% OFF');
+    console.log('- Discount: 70% OFF');
     console.log('\n⚠️  IMPORTANT: This is LIVE - customers will now see the new pricing!');
     
   } catch (error) {

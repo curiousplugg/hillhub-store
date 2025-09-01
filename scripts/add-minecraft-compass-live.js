@@ -35,7 +35,7 @@ async function addMinecraftCompassLive() {
     // Create the price
     const price = await stripe.prices.create({
       product: product.id,
-              unit_amount: 1199, // $11.99 in cents
+              unit_amount: 599, // $5.99 in cents
       currency: 'usd',
     });
     
@@ -48,7 +48,7 @@ async function addMinecraftCompassLive() {
     console.log('\n🎉 SUCCESS: Minecraft Compass product added to LIVE Stripe account!');
     console.log(`📦 Product ID: ${product.id}`);
     console.log(`💰 Price ID: ${price.id}`);
-            console.log(`💵 Price: $11.99 USD`);
+            console.log(`💵 Price: $5.99 USD`);
     console.log('\n⚠️  IMPORTANT: This is now LIVE - real payments will be processed!');
     console.log('\n📝 Next steps:');
     console.log('1. Set up webhook endpoint in Stripe Dashboard');

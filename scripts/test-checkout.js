@@ -14,7 +14,7 @@ async function testCheckout() {
       payment_method_types: ['card'],
       line_items: [
                             {
-                      price: 'price_1RyIdqBJjaZO6BBgFHzb7Be4', // Your Minecraft Compass price ID
+                      price: 'price_1S2MpdBJjaZO6BBgoOyAu4Yj', // Your Minecraft Compass price ID
                       quantity: 1,
                     },
         // Add shipping
@@ -56,7 +56,7 @@ async function testCheckout() {
     console.log('🎯 This checkout will display:');
     console.log('- Your uploaded Minecraft Compass image');
     console.log('- Product name and description from Stripe');
-                    console.log('- Price: $11.99');
+                    console.log('- Price: $5.99');
                 console.log('- Shipping: $4.99');
                     console.log('- Total: $16.98');
     console.log('');

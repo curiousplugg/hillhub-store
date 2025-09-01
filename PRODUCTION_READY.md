@@ -84,7 +84,7 @@ Your HillHub dropshipping store is now configured for production deployment with
 
 ## 📊 Current Products
 
-- **Minecraft Compass** - $11.99
+- **Minecraft Compass** - $5.99
   - Product ID: `prod_StSX7agKmGxakP`
   - Live on Stripe
   - Ready for sales

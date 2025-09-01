@@ -33,7 +33,7 @@ export async function POST(req: NextRequest) {
         (() => {
           if (productId === 'prod_StSX7agKmGxakP') {
             return {
-              price: 'price_1RyIdqBJjaZO6BBgFHzb7Be4', // Minecraft Compass Stripe price ID
+              price: 'price_1S2MpdBJjaZO6BBgoOyAu4Yj', // Minecraft Compass Stripe price ID
               quantity: quantity,
             };
           }

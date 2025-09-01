@@ -3,7 +3,7 @@ import { stripe } from '@/lib/stripe';
 
 export async function POST(req: NextRequest) {
   try {
-    const { items, successUrl, cancelUrl } = await req.json();
+    const { items, successUrl, cancelUrl, shipping, total } = await req.json();
 
     if (!stripe) {
       return NextResponse.json(
@@ -12,42 +12,59 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Calculate shipping based on products in cart
+    // Check if this is a card skins order (all items are card skins)
+    const isCardSkinsOrder = items.every((item: any) => 
+      item.priceId && item.priceId.startsWith('price_cardskin_')
+    );
+
+    // Calculate shipping based on order type
     let shippingAmount = 0;
-    const hasCompass = items.some((item: any) => item.id === 'prod_StSX7agKmGxakP');
-    const hasHologramCube = items.some((item: any) => item.id === 'prod_SuAzOcPEF7ZVoV');
-    
-    // Set shipping based on products
-    if (hasCompass && hasHologramCube) {
-      // If both products, use the higher shipping rate
-      shippingAmount = 999; // $9.99
-    } else if (hasCompass) {
-      shippingAmount = 599; // $5.99 for compass only
-    } else if (hasHologramCube) {
-      shippingAmount = 999; // $9.99 for hologram cube only
+    if (isCardSkinsOrder) {
+      // Card skins: $4.99 flat rate
+      shippingAmount = 499;
     } else {
-      shippingAmount = 999; // Default shipping for other products
+      // Regular products: existing logic
+      const hasCompass = items.some((item: any) => item.id === 'prod_StSX7agKmGxakP');
+      const hasHologramCube = items.some((item: any) => item.id === 'prod_SuAzOcPEF7ZVoV');
+      
+      if (hasCompass && hasHologramCube) {
+        shippingAmount = 999; // $9.99
+      } else if (hasCompass) {
+        shippingAmount = 599; // $5.99 for compass only
+      } else if (hasHologramCube) {
+        shippingAmount = 999; // $9.99 for hologram cube only
+      } else {
+        shippingAmount = 999; // Default shipping for other products
+      }
     }
 
     // Create Stripe checkout session with custom branding
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
       line_items: [
-        ...items.map((item: { id: string; name: string; description: string; price: number; quantity: number; images?: string[] }) => {
+        ...items.map((item: { id: string; name: string; description: string; price: number; quantity: number; images?: string[]; priceId?: string }) => {
+          // Handle card skins - use Stripe price ID
+          if (item.priceId && item.priceId.startsWith('price_cardskin_')) {
+            return {
+              price: item.priceId,
+              quantity: item.quantity,
+            };
+          }
+          
           // Handle Minecraft Compass product specifically - use Stripe price ID for automatic product data
-                                if (item.id === 'prod_StSX7agKmGxakP') {
-                        return {
-                          price: 'price_1RyIdqBJjaZO6BBgFHzb7Be4', // Use Stripe price ID for automatic product data including your uploaded image
-                          quantity: item.quantity,
-                        };
-                      }
-                      
-                      if (item.id === 'prod_SuAzOcPEF7ZVoV') {
-                        return {
-                          price: 'price_1RyMhfBJjaZO6BBgQfl1z4HZ', // Use Stripe price ID for automatic product data
-                          quantity: item.quantity,
-                        };
-                      }
+          if (item.id === 'prod_StSX7agKmGxakP') {
+            return {
+              price: 'price_1S2MpdBJjaZO6BBgoOyAu4Yj', // Use Stripe price ID for automatic product data including your uploaded image
+              quantity: item.quantity,
+            };
+          }
+          
+          if (item.id === 'prod_SuAzOcPEF7ZVoV') {
+            return {
+              price: 'price_1RyMhfBJjaZO6BBgQfl1z4HZ', // Use Stripe price ID for automatic product data
+              quantity: item.quantity,
+            };
+          }
           
           // For other products, use manual price_data
           return {

@@ -3,6 +3,7 @@
 import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Star, ShoppingCart, Truck, Shield, RotateCcw, Play, Pause, Volume2, VolumeX, ArrowLeft, ArrowRight } from 'lucide-react';
+import { useCart } from '@/contexts/CartContext';
 
 export default function MinecraftCompassPage() {
   const [currentImage, setCurrentImage] = useState(0);
@@ -10,7 +11,10 @@ export default function MinecraftCompassPage() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const [quantity, setQuantity] = useState(1);
+  const [isCheckingOut, setIsCheckingOut] = useState(false);
+  const [isAddingToCart, setIsAddingToCart] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const { addItem } = useCart();
 
   const images = [
     '/minecraft_compass/compass.jpg',
@@ -42,6 +46,71 @@ export default function MinecraftCompassPage() {
     if (videoRef.current) {
       videoRef.current.muted = !isMuted;
       setIsMuted(!isMuted);
+    }
+  };
+
+  const handleAddToCart = () => {
+    setIsAddingToCart(true);
+    
+    const product = {
+      id: 'prod_StSX7agKmGxakP',
+      name: 'Minecraft Compass',
+      description: 'Navigate your world with this authentic Minecraft compass replica. Experience the magic of Minecraft in the real world with this authentic compass replica! Perfect for fans of all ages, this high-quality compass features the iconic red needle that always points to your spawn point. Made with premium materials and attention to detail, it\'s the perfect gift for any Minecraft enthusiast.',
+      price: 5.99,
+      originalPrice: 19.99,
+      images: ['/minecraft_compass/compass_in_hand.jpg'],
+      category: 'Gaming',
+      brand: 'Minecraft',
+      rating: 4.9,
+      reviews: 2847,
+      inStock: true,
+      features: ['Authentic Design', 'High-quality Materials', 'Perfect Gift', 'Working Compass', 'Premium Packaging'],
+      specifications: {
+        'Material': 'High-quality metal and glass',
+        'Dimensions': '3.5 x 3.5 x 1.2 inches',
+        'Weight': '4.2 oz (120g)',
+        'Color': 'Classic Minecraft brown with red needle',
+        'Function': 'Working compass with magnetic needle',
+        'Packaging': 'Premium gift box included'
+      },
+      stripePriceId: 'price_1S2MpdBJjaZO6BBgoOyAu4Yj'
+    };
+
+    addItem(product, quantity);
+    
+    // Show success feedback
+    setTimeout(() => {
+      setIsAddingToCart(false);
+    }, 1000);
+  };
+
+  const handleBuyNow = async () => {
+    setIsCheckingOut(true);
+    try {
+      const response = await fetch('/api/checkout/buy-now', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          productId: 'prod_StSX7agKmGxakP',
+          quantity: quantity,
+          successUrl: `${window.location.origin}/success`,
+          cancelUrl: `${window.location.origin}/cancel`,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to create checkout session');
+      }
+
+      const { url } = await response.json();
+      window.location.href = url;
+    } catch (error) {
+      console.error('Error creating checkout session:', error);
+      alert('Failed to create checkout session. Please try again.');
+    } finally {
+      setIsCheckingOut(false);
     }
   };
 
@@ -195,9 +264,7 @@ export default function MinecraftCompassPage() {
                 <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
                   Minecraft Compass
                 </h1>
-                <p className="text-base sm:text-lg md:text-xl text-gray-600 mt-2 sm:mt-4">
-                  Navigate your world with this authentic Minecraft compass replica! Experience the magic of Minecraft in the real world with this rechargeable electronic compass featuring an oscillating pointer. Perfect for fans of all ages, this high-quality compass points north and makes an ideal backpack charm, desktop decoration, or collectible item. Battery-powered with USB-C charging for convenience.
-                </p>
+
               </div>
 
               {/* Rating */}
@@ -218,13 +285,13 @@ export default function MinecraftCompassPage() {
               {/* Price */}
               <div className="flex flex-wrap items-center gap-2 sm:gap-4">
                 <span className="text-3xl sm:text-4xl font-bold text-gray-900">
-                  $11.99
+                  $5.99
                 </span>
                 <span className="text-lg sm:text-xl text-gray-500 line-through">
                     $19.99
                 </span>
                 <span className="bg-red-500 text-white text-xs sm:text-sm px-2 sm:px-3 py-1 rounded-full font-medium">
-                  54% OFF
+                  70% OFF
                 </span>
               </div>
 
@@ -290,18 +357,47 @@ export default function MinecraftCompassPage() {
                     </button>
                   </div>
                   <span className="text-gray-600 text-sm sm:text-base">
-                    ${(11.99 * quantity).toFixed(2)} total
+                    ${(5.99 * quantity).toFixed(2)} total
                   </span>
                 </div>
               </div>
 
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="flex-1 bg-gray-900 text-white py-4 px-8 rounded-lg font-bold text-lg hover:bg-gray-800 transition-colors flex items-center justify-center group">
-                  <ShoppingCart className="h-6 w-6 mr-3 group-hover:scale-110 transition-transform" />
-                  Add to Cart - ${(11.99 * quantity).toFixed(2)}
+                <button 
+                  onClick={handleAddToCart}
+                  disabled={isAddingToCart}
+                  className="flex-1 bg-gray-900 text-white py-4 px-8 rounded-lg font-bold text-lg hover:bg-gray-800 transition-colors flex items-center justify-center group disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isAddingToCart ? (
+                    <div className="flex items-center">
+                      <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-white mr-3"></div>
+                      Added!
+                    </div>
+                  ) : (
+                    <>
+                      <ShoppingCart className="h-6 w-6 mr-3 group-hover:scale-110 transition-transform" />
+                      Add to Cart - ${(5.99 * quantity).toFixed(2)}
+                    </>
+                  )}
                 </button>
-
+                <button 
+                  onClick={handleBuyNow}
+                  disabled={isCheckingOut}
+                  className="flex-1 bg-red-600 text-white py-4 px-8 rounded-lg font-bold text-lg hover:bg-red-700 transition-colors flex items-center justify-center group disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isCheckingOut ? (
+                    <div className="flex items-center">
+                      <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-white mr-3"></div>
+                      Processing...
+                    </div>
+                  ) : (
+                    <>
+                      <span className="mr-3">⚡</span>
+                      Buy Now - ${(5.99 * quantity).toFixed(2)}
+                    </>
+                  )}
+                </button>
               </div>
 
               {/* Trust Badges */}
@@ -446,7 +542,7 @@ export default function MinecraftCompassPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-white text-gray-900 py-4 px-8 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors">
-                Buy Now - $11.99
+                                  Buy Now - $5.99
               </button>
               <button className="border-2 border-white text-white py-4 px-8 rounded-lg font-bold text-lg hover:bg-white hover:text-gray-900 transition-colors">
                 Learn More

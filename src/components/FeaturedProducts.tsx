@@ -71,7 +71,7 @@ export default function FeaturedProducts() {
             id: 'prod_StSX7agKmGxakP',
             name: 'Minecraft Compass',
             description: 'Navigate your world with this authentic Minecraft compass replica. Experience the magic of Minecraft in the real world with this authentic compass replica! Perfect for fans of all ages, this high-quality compass features the iconic red needle that always points to your spawn point. Made with premium materials and attention to detail, it\'s the perfect gift for any Minecraft enthusiast.',
-            price: 11.99,
+            price: 5.99,
             originalPrice: 19.99,
             images: ['https://files.stripe.com/links/MDB8YWNjdF8xUnhlS2lCSmphWk82QkJnfGZsX2xpdmVfUUF2RHREZXMwcWpYbFozRjUxT0ZDbkJl00vDrkBY57'], // Use Stripe-hosted image
             category: 'Gaming',
@@ -88,7 +88,7 @@ export default function FeaturedProducts() {
               'Function': 'Working compass with magnetic needle',
               'Packaging': 'Premium gift box included'
             },
-            stripePriceId: 'price_1RyIdqBJjaZO6BBgFHzb7Be4'
+            stripePriceId: 'price_1S2MpdBJjaZO6BBgoOyAu4Yj'
           };
 
           const hologramCubeProduct: Product = {
@@ -176,7 +176,7 @@ export default function FeaturedProducts() {
           id: 'prod_StSX7agKmGxakP',
           name: 'Minecraft Compass',
           description: 'Navigate your world with this authentic Minecraft compass replica. Experience the magic of Minecraft in the real world with this authentic compass replica! Perfect for fans of all ages, this high-quality compass features the iconic red needle that always points to your spawn point. Made with premium materials and attention to detail, it\'s the perfect gift for any Minecraft enthusiast.',
-          price: 11.99,
+                      price: 5.99,
           originalPrice: 19.99,
           images: ['https://files.stripe.com/links/MDB8YWNjdF8xUnhlS2lCSmphWk82QkJnfGZsX2xpdmVfUUF2RHREZXMwcWpYbFozRjUxT0ZDbkJl00vDrkBY57'], // Use Stripe-hosted image
           category: 'Gaming',
@@ -193,7 +193,7 @@ export default function FeaturedProducts() {
             'Function': 'Working compass with magnetic needle',
             'Packaging': 'Premium gift box included'
           },
-          stripePriceId: 'price_1RyIdqBJjaZO6BBgFHzb7Be4'
+                      stripePriceId: 'price_1S2MpdBJjaZO6BBgoOyAu4Yj'
         };
         setFeaturedProducts([minecraftCompassProduct]);
       } finally {

@@ -30,7 +30,7 @@ The "Buy Now" button on the hologram cube product page now directly creates a St
 
 ### Product Configuration
 - **Hologram Cube**: `prod_SuAzOcPEF7ZVoV` → `price_1RyMhfBJjaZO6BBgQfl1z4HZ`
-- **Minecraft Compass**: `prod_StSX7agKmGxakP` → `price_1RyIdqBJjaZO6BBgFHzb7Be4`
+- **Minecraft Compass**: `prod_StSX7agKmGxakP` → `price_1S2MpdBJjaZO6BBgoOyAu4Yj`
 
 ### Shipping Costs
 - **Hologram Cube**: $9.99

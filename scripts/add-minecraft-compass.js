@@ -42,7 +42,7 @@ async function addMinecraftCompass() {
     // Create the price
     const price = await stripe.prices.create({
       product: product.id,
-              unit_amount: 1199, // $11.99 in cents
+              unit_amount: 599, // $5.99 in cents
       currency: 'usd',
     });
 

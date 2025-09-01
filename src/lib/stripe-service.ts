@@ -15,6 +15,7 @@ export interface StripeProduct {
   features: string[];
   specifications: Record<string, string>;
   stripePriceId: string;
+  metadata?: Record<string, string>;
 }
 
 // Fetch all products from Stripe
@@ -68,6 +69,7 @@ export async function getStripeProducts(): Promise<StripeProduct[]> {
         features: metadata.features ? JSON.parse(metadata.features) : [],
         specifications: metadata.specifications ? JSON.parse(metadata.specifications) : {},
         stripePriceId: price?.id || '',
+        metadata: metadata,
       };
     });
   } catch (error) {
