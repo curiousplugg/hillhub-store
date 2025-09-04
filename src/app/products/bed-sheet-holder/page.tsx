@@ -55,8 +55,8 @@ export default function BedSheetHolderPage() {
       id: 'prod_SzTH6yZQpYqQYl',
       name: 'Invisible Bed Sheet Holder Clips - No Slip Needle-Free Grippers',
       description: 'Keep your fitted sheets in place with our bed sheet holder straps. Designed with heavy-duty fasteners for strong compatibility, these straps are not easy to deform. The simple and elegant design allows for multifunctional use. Perfect for families with children or pets, ensuring your bed stays clean and tidy.',
-      price: 15.00,
-      originalPrice: 25.00,
+      price: 14.99,
+      originalPrice: 29.99,
       images: ['/bed-sheet-holder/bed-sheet-holder-1.jpg'],
       category: 'Home & Bedding',
       brand: 'HillHub',
@@ -78,7 +78,7 @@ export default function BedSheetHolderPage() {
         'Color Options': 'White, Gray',
         'Compatibility': 'Universal fit for all bed sizes'
       },
-      stripePriceId: 'price_1S3UKbBJjaZO6BBgpxZeRB2R'
+      stripePriceId: 'price_1S3UXlBJjaZO6BBgWn7b1khB'
     };
 
     addItem(product, quantity);
@@ -290,13 +290,13 @@ export default function BedSheetHolderPage() {
               {/* Price */}
               <div className="flex flex-wrap items-center gap-2 sm:gap-4">
                 <span className="text-3xl sm:text-4xl font-bold text-gray-900">
-                  $15.00
+                  $14.99
                 </span>
                 <span className="text-lg sm:text-xl text-gray-500 line-through">
-                    $25.00
+                    $29.99
                 </span>
                 <span className="bg-red-500 text-white text-xs sm:text-sm px-2 sm:px-3 py-1 rounded-full font-medium">
-                  40% OFF
+                  50% OFF
                 </span>
               </div>
 
@@ -563,7 +563,7 @@ export default function BedSheetHolderPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-white text-gray-900 py-4 px-8 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors">
-                Buy Now - $15.00
+                Buy Now - $14.99
               </button>
               <button className="border-2 border-white text-white py-4 px-8 rounded-lg font-bold text-lg hover:bg-white hover:text-gray-900 transition-colors">
                 Learn More

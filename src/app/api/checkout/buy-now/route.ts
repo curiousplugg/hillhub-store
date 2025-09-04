@@ -40,7 +40,7 @@ export async function POST(req: NextRequest) {
             };
           } else if (productId === 'prod_SzTH6yZQpYqQYl') {
             return {
-              price: 'price_1S3UKbBJjaZO6BBgpxZeRB2R', // Bed Sheet Holder Stripe price ID
+              price: 'price_1S3UXlBJjaZO6BBgWn7b1khB', // Bed Sheet Holder Stripe price ID
               quantity: quantity,
             };
           }

@@ -171,8 +171,8 @@ export default function FeaturedProducts() {
             id: 'prod_SzTH6yZQpYqQYl',
             name: 'Invisible Bed Sheet Holder Clips - No Slip Needle-Free Grippers',
             description: 'Keep your fitted sheets in place with our bed sheet holder straps. Designed with heavy-duty fasteners for strong compatibility, these straps are not easy to deform. The simple and elegant design allows for multifunctional use. Perfect for families with children or pets, ensuring your bed stays clean and tidy.',
-            price: 15.00,
-            originalPrice: 25.00,
+            price: 14.99,
+            originalPrice: 29.99,
             images: ['/bed-sheet-holder/bed-sheet-holder-1.jpg'],
             category: 'Home & Bedding',
             brand: 'HillHub',
@@ -194,7 +194,7 @@ export default function FeaturedProducts() {
               'Color Options': 'White, Gray',
               'Compatibility': 'Universal fit for all bed sizes'
             },
-            stripePriceId: 'price_1S3UKbBJjaZO6BBgpxZeRB2R'
+            stripePriceId: 'price_1S3UXlBJjaZO6BBgWn7b1khB'
           };
 
           setFeaturedProducts([minecraftCompassProduct, hologramCubeProduct, smartLedBacklightProduct, bedSheetHolderProduct]);
@@ -293,6 +293,7 @@ export default function FeaturedProducts() {
                             product.id === 'prod_StSX7agKmGxakP' ? '/products/MinecraftCompass' : 
                             product.id === 'prod_SuAzOcPEF7ZVoV' ? '/products/hologram-cube' : 
                             product.id === 'prod_SmartLedBacklight' ? '/products/smart-led-backlight' : 
+                            product.id === 'prod_SzTH6yZQpYqQYl' ? '/products/bed-sheet-holder' : 
                             `/products/${product.id}`
                           } className="block">
                 {/* Product Image */}

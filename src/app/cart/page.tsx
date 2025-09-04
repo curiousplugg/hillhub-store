@@ -14,6 +14,7 @@ export default function CartPage() {
   const hasCompass = state.items.some(item => item.id === 'prod_StSX7agKmGxakP');
   const hasHologramCube = state.items.some(item => item.id === 'prod_SuAzOcPEF7ZVoV');
   const hasSmartLedBacklight = state.items.some(item => item.id === 'prod_SmartLedBacklight');
+  const hasBedSheetHolder = state.items.some(item => item.id === 'prod_SzTH6yZQpYqQYl');
   
   let shippingAmount = 0;
   if (hasCompass && hasHologramCube) {
@@ -25,6 +26,8 @@ export default function CartPage() {
     shippingAmount = 9.99; // $9.99 for hologram cube only
   } else if (hasSmartLedBacklight) {
     shippingAmount = 4.99; // $4.99 for Smart LED Backlight
+  } else if (hasBedSheetHolder) {
+    shippingAmount = 4.99; // $4.99 for Bed Sheet Holder
   } else {
     shippingAmount = 9.99; // Default shipping for other products
   }
