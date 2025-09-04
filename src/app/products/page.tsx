@@ -124,9 +124,39 @@ export default function ProductsPage() {
       stripePriceId: 'price_smart_led_backlight'
     };
 
-    setAllProducts([minecraftCompassProduct, hologramCubeProduct, smartLedBacklightProduct]);
-    setCategories(['All', 'Gaming', 'Electronics', 'Gadgets']);
-          setBrands(['All', 'Minecraft', 'GeekMagic', 'Skydimo']);
+    const bedSheetHolderProduct: Product = {
+      id: 'prod_SzTH6yZQpYqQYl',
+      name: 'Invisible Bed Sheet Holder Clips - No Slip Needle-Free Grippers',
+      description: 'Keep your fitted sheets in place with our bed sheet holder straps. Designed with heavy-duty fasteners for strong compatibility, these straps are not easy to deform. The simple and elegant design allows for multifunctional use. Perfect for families with children or pets, ensuring your bed stays clean and tidy.',
+      price: 15.00,
+      originalPrice: 25.00,
+      images: ['/bed-sheet-holder/bed-sheet-holder-1.jpg'],
+      category: 'Home & Bedding',
+      brand: 'HillHub',
+      rating: 4.7,
+      reviews: 156,
+      inStock: true,
+      features: [
+        'Strong Fixation',
+        'Versatile Fit for Any Bed',
+        'Tough Design',
+        'Create Cozy Sleep Space',
+        'Vast Application'
+      ],
+      specifications: {
+        'Net Weight': '450g',
+        'Material': 'PVC',
+        'Product Size': '20.5x12.9x11.6cm (8.07x5.08x4.57 inches)',
+        'Package Includes': '4 x Bed Sheet Holders Straps Fitted',
+        'Color Options': 'White, Gray',
+        'Compatibility': 'Universal fit for all bed sizes'
+      },
+      stripePriceId: 'price_1S3UKbBJjaZO6BBgpxZeRB2R'
+    };
+
+    setAllProducts([minecraftCompassProduct, hologramCubeProduct, smartLedBacklightProduct, bedSheetHolderProduct]);
+    setCategories(['All', 'Gaming', 'Electronics', 'Gadgets', 'Home & Bedding']);
+          setBrands(['All', 'Minecraft', 'GeekMagic', 'Skydimo', 'HillHub']);
     setLoading(false);
   }, []);
 

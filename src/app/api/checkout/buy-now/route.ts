@@ -21,6 +21,8 @@ export async function POST(req: NextRequest) {
       shippingAmount = 999; // $9.99 for hologram cube
     } else if (productId === 'prod_SmartLedBacklight') {
       shippingAmount = 499; // $4.99 for LED backlight
+    } else if (productId === 'prod_SzTH6yZQpYqQYl') {
+      shippingAmount = 499; // $4.99 for bed sheet holder
     } else {
       shippingAmount = 999; // Default shipping for other products
     }
@@ -34,6 +36,11 @@ export async function POST(req: NextRequest) {
           if (productId === 'prod_StSX7agKmGxakP') {
             return {
               price: 'price_1S2MpdBJjaZO6BBgoOyAu4Yj', // Minecraft Compass Stripe price ID
+              quantity: quantity,
+            };
+          } else if (productId === 'prod_SzTH6yZQpYqQYl') {
+            return {
+              price: 'price_1S3UKbBJjaZO6BBgpxZeRB2R', // Bed Sheet Holder Stripe price ID
               quantity: quantity,
             };
           }
