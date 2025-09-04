@@ -66,6 +66,13 @@ export async function POST(req: NextRequest) {
             };
           }
           
+          if (item.id === 'prod_SzTH6yZQpYqQYl') {
+            return {
+              price: 'price_1S3UXlBJjaZO6BBgWn7b1khB', // Use Stripe price ID for automatic product data
+              quantity: item.quantity,
+            };
+          }
+          
           // For other products, use manual price_data
           return {
             price_data: {

@@ -171,6 +171,8 @@ export default function BedSheetHolderPage() {
                       poster={images[0]}
                       loop
                       muted={isMuted}
+                      preload="metadata"
+                      controls={false}
                     >
                       <source src={videos[currentVideo]} type="video/mp4" />
                     </video>
@@ -244,6 +246,7 @@ export default function BedSheetHolderPage() {
                     <video
                       className="w-full h-full object-cover"
                       poster={images[0]}
+                      preload="metadata"
                     >
                       <source src={video} type="video/mp4" />
                     </video>
@@ -303,7 +306,7 @@ export default function BedSheetHolderPage() {
               {/* Stock Status */}
               <div className="flex items-center space-x-3">
                 <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
-                <span className="text-green-700 font-medium">In Stock - Ships Today!</span>
+                <span className="text-green-700 font-medium">In Stock</span>
               </div>
 
               {/* Description */}
